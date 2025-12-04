@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume — WebResume</title>
+  <meta name="description" content="Simple bilingual resume — English / Français" />
+  <link rel="stylesheet" href="assets/styles/theme.css">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <link rel="stylesheet" href="assets/styles/print.css" media="print">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">WebResume</div>
+    <div class="controls">
+      <button id="lang-toggle" aria-label="Toggle language">Français</button>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button id="export-pdf" aria-label="Export PDF">Export PDF</button>
+    </div>
+  </header>
+
+  <main id="resume-root" class="container">
+    <section id="about" class="section" role="region" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <div id="about-content"></div>
+    </section>
+
+    <section id="experience" class="section" role="region" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <div id="experience-content"></div>
+    </section>
+
+    <section id="skills" class="section" role="region" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div id="skills-content"></div>
+    </section>
+
+    <section id="education" class="section" role="region" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div id="education-content"></div>
+    </section>
+
+    <section id="projects" class="section" role="region" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div id="projects-content"></div>
+    </section>
+
+    <footer id="contact" class="section" role="contentinfo">
+      <h2>Contact</h2>
+      <div id="contact-content"></div>
+      <div id="social-content"></div>
+    </footer>
+  </main>
+
+  <script src="assets/scripts/resume-data.js"></script>
+  <script src="assets/scripts/pdf-export.js"></script>
+  <script src="assets/scripts/main.js"></script>
+</body>
+</html>

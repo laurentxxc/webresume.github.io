@@ -1,0 +1,52 @@
+/* Core app logic: language, theme, render, persistence */
+(function(){
+  const LS_KEY = 'webresume:prefs'
+  const defaultPrefs = {lang:'en',theme:'light'}
+  let prefs = Object.assign({}, defaultPrefs)
+
+  function loadPrefs(){
+    try{const raw = localStorage.getItem(LS_KEY); if(raw) prefs = Object.assign(prefs, JSON.parse(raw))}catch(e){}
+  }
+  function savePrefs(){ try{localStorage.setItem(LS_KEY, JSON.stringify(prefs))}catch(e){} }
+
+  function setLanguage(lang){ prefs.lang = lang; savePrefs(); renderResume(); updateLangButton(); }
+  function toggleLanguage(){ setLanguage(prefs.lang === 'en' ? 'fr' : 'en') }
+
+  function setTheme(t){ prefs.theme = t; savePrefs(); applyTheme(); }
+  function toggleTheme(){ setTheme(prefs.theme === 'light' ? 'dark' : 'light') }
+
+  function applyTheme(){ document.documentElement.setAttribute('data-theme', prefs.theme); const btn = document.getElementById('theme-toggle'); if(btn) btn.textContent = prefs.theme === 'dark' ? '☀️' : '🌙' }
+  function updateLangButton(){ const b = document.getElementById('lang-toggle'); if(!b) return; b.textContent = prefs.lang === 'en' ? 'Français' : 'English' }
+
+  function renderResume(){ const lang = prefs.lang || 'en'; const data = window.resumeData && window.resumeData[lang]; if(!data) return;
+    // About
+    const about = document.getElementById('about-content'); about.innerHTML = '<p>'+escapeHtml(data.about)+'</p>';
+    // Experience
+    const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${escapeHtml(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p><p>${escapeHtml(e.description)}</p></article>`).join('');
+    // Skills
+    const skills = document.getElementById('skills-content'); skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
+    // Education
+    const edu = document.getElementById('education-content'); edu.innerHTML = data.education.map(d=>`<div><strong>${escapeHtml(d.degree)}</strong> — ${escapeHtml(d.school)} <span class="muted">(${escapeHtml(d.year)})</span></div>`).join('');
+    // Projects
+    const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(p.desc)}</p><a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
+    // Contact & Social
+    const contact = document.getElementById('contact-content'); contact.innerHTML = `<div><strong>Email:</strong> <a href="mailto:${escapeAttr(data.contact.email)}">${escapeHtml(data.contact.email)}</a></div><div><strong>Phone:</strong> ${escapeHtml(data.contact.phone)}</div><div class="muted">${escapeHtml(data.contact.location)}</div>`;
+    const social = document.getElementById('social-content'); social.innerHTML = data.social.map(s=>`<a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)}</a>`).join(' | ');
+  }
+
+  function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); }
+  function escapeAttr(s){ if(!s) return ''; return String(s).replace(/"/g,'&quot;'); }
+
+  function wireEvents(){
+    const langBtn = document.getElementById('lang-toggle'); if(langBtn) langBtn.addEventListener('click', ()=>{ toggleLanguage(); });
+    const themeBtn = document.getElementById('theme-toggle'); if(themeBtn) themeBtn.addEventListener('click', ()=>{ toggleTheme(); });
+    const exportBtn = document.getElementById('export-pdf'); if(exportBtn) exportBtn.addEventListener('click', ()=>{ if(window.exportPDF) window.exportPDF(); else window.print(); });
+  }
+
+  function init(){ loadPrefs(); applyTheme(); updateLangButton(); wireEvents(); renderResume(); }
+
+  document.addEventListener('DOMContentLoaded', init);
+
+  // Expose some functions for debugging
+  window.webresume = {setLanguage,setTheme,renderResume};
+})();

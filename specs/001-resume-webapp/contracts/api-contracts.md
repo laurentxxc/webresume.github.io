@@ -340,7 +340,7 @@ All interactive elements must include:
 ```html
 <!-- Language Selector -->
 <button id="lang-toggle" aria-label="Change language" aria-pressed="false">
-  English / Français
+English 🇬🇧 / Français 🇫🇷
 </button>
 
 <!-- Theme Toggle -->

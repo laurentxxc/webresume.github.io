@@ -1,0 +1,7 @@
+:root{--bg-white:#ffffff}
+
+/* Theme variables live in main.css for simplicity; this file provides default theme marker */
+html{background:var(--bg)}
+
+/* Provide a data-theme attribute hook */
+/* Set via JS: document.documentElement.setAttribute('data-theme', 'dark') */

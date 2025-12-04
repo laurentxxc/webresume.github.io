@@ -17,10 +17,10 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 **Purpose**: Project structure and baseline configuration
 
-- [ ] T001 Create project directory structure: `index.html`, `assets/{styles,scripts,images}/`, build config stubs
-- [ ] T002 [P] Initialize git repository with `.gitignore` (node_modules, dist/, build artifacts)
-- [ ] T003 [P] Create `assets/styles/theme.css` with CSS custom properties for light/dark mode
-- [ ] T004 [P] Create `assets/styles/print.css` for PDF-friendly printing
+ - [X] T001 Create project directory structure: `index.html`, `assets/{styles,scripts,images}/`, build config stubs
+ - [X] T002 [P] Initialize git repository with `.gitignore` (node_modules, dist/, build artifacts)
+ - [X] T003 [P] Create `assets/styles/theme.css` with CSS custom properties for light/dark mode
+ - [X] T004 [P] Create `assets/styles/print.css` for PDF-friendly printing
 
 ---
 
@@ -30,13 +30,13 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 [P] Create `assets/scripts/resume-data.js` with bilingual data structure (French & English)
-- [ ] T006 [P] Create `index.html` with semantic HTML structure (header, nav, main, sections, footer)
-- [ ] T007 Create `assets/scripts/main.js` with app initialization and event setup
-- [ ] T008 [P] Create `assets/styles/main.css` with base styles, layout, responsive grid
-- [ ] T009 Implement localStorage manager in `assets/scripts/main.js` for language/theme persistence
-- [ ] T010 Implement language switching logic (update DOM on language toggle)
-- [ ] T011 Implement theme toggle logic (apply CSS variable values, persist to localStorage)
+ - [X] T005 [P] Create `assets/scripts/resume-data.js` with bilingual data structure (French & English)
+ - [X] T006 [P] Create `index.html` with semantic HTML structure (header, nav, main, sections, footer)
+ - [X] T007 Create `assets/scripts/main.js` with app initialization and event setup
+ - [X] T008 [P] Create `assets/styles/main.css` with base styles, layout, responsive grid
+ - [X] T009 Implement localStorage manager in `assets/scripts/main.js` for language/theme persistence
+ - [X] T010 Implement language switching logic (update DOM on language toggle)
+ - [X] T011 Implement theme toggle logic (apply CSS variable values, persist to localStorage)
 
 **Checkpoint**: Foundation ready — all interactive controls functional. Language and theme persist across page reloads.
 
@@ -57,16 +57,16 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T014 [P] [US1] Create About section template in `index.html` with profile text and optional photo in `assets/images/`
-- [ ] T015 [P] [US1] Create Experience section template with job entries (company, role, dates, description, bullets)
-- [ ] T016 [P] [US1] Create Skills section template with skill cards (name, category, level)
-- [ ] T017 [P] [US1] Create Education section template with degree entries (institution, degree, field, graduation date)
-- [ ] T018 [P] [US1] Create Contact section template with email, phone, location, website
-- [ ] T019 [P] [US1] Create Social section template with social links (LinkedIn, GitHub, etc.)
-- [ ] T020 [US1] Implement `renderResume(language)` function in `assets/scripts/main.js` to populate sections from resume-data.js
-- [ ] T021 [US1] Add semantic HTML validation: all sections have h2 headings, proper landmark roles
-- [ ] T022 [US1] Ensure responsive layout: sections readable on mobile (viewport 320px+), tablet (768px+), desktop (1024px+)
-- [ ] T023 [US1] Test on desktop browsers (Chrome, Firefox, Safari, Edge) and mobile (iOS Safari, Android Chrome)
+ - [X] T014 [P] [US1] Create About section template in `index.html` with profile text and optional photo in `assets/images/`
+ - [X] T015 [P] [US1] Create Experience section template with job entries (company, role, dates, description, bullets)
+ - [X] T016 [P] [US1] Create Skills section template with skill cards (name, category, level)
+ - [X] T017 [P] [US1] Create Education section template with degree entries (institution, degree, field, graduation date)
+ - [X] T018 [P] [US1] Create Contact section template with email, phone, location, website
+ - [X] T019 [P] [US1] Create Social section template with social links (LinkedIn, GitHub, etc.)
+ - [X] T020 [US1] Implement `renderResume(language)` function in `assets/scripts/main.js` to populate sections from resume-data.js
+ - [X] T021 [US1] Add semantic HTML validation: all sections have h2 headings, proper landmark roles
+ - [X] T022 [US1] Ensure responsive layout: sections readable on mobile (viewport 320px+), tablet (768px+), desktop (1024px+)
+ - [X] T023 [US1] Test on desktop browsers (Chrome, Firefox, Safari, Edge) and mobile (iOS Safari, Android Chrome)
 
 **Checkpoint**: US1 complete — all resume sections render correctly in both languages, responsive layout confirmed.
 
@@ -110,9 +110,9 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T035 [US3] Create `assets/scripts/pdf-export.js` with PDFExporter class using jsPDF + html2canvas or print-to-PDF API
-- [ ] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
-- [ ] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
+ - [X] T035 [US3] Create `assets/scripts/pdf-export.js` with PDFExporter class using jsPDF + html2canvas or print-to-PDF API
+ - [X] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
+ - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
 - [ ] T038 [US3] Add print stylesheet optimization in `assets/styles/print.css` (page breaks, margins, hide controls, preserve colors for PDF)
 - [ ] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
 - [ ] T040 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
@@ -186,8 +186,8 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 - [ ] T065 [P] Create `README.md` with setup instructions, customization guide, deployment steps for GitHub Pages / Vercel / Netlify
 - [ ] T066 [P] Add `.gitignore`: node_modules/, dist/, build artifacts, local config (if needed)
 - [ ] T067 Create GitHub Actions workflow (optional) for lighthouse CI, link checker, accessibility audit
-- [ ] T068 Test on real devices: iPhone 12/14, Android phone, tablet (iPad); test on slow network (3G simulation)
-- [ ] T069 Create sample resume data in both languages (`resume-data.js` template with placeholder content)
+ - [ ] T068 Test on real devices: iPhone 12/14, Android phone, tablet (iPad); test on slow network (3G simulation)
+ - [X] T069 Create sample resume data in both languages (`resume-data.js` template with placeholder content)
 - [ ] T070 Update `package.json` (if using build tool) with dev dependencies: jsPDF, html2canvas, jest, axe-core
 - [ ] T071 Document code: JSDoc comments on main functions, README sections for data model, customization
 - [ ] T072 Final QA: smoke test all 5 user stories; language toggle, theme toggle, PDF export all functional
@@ -327,4 +327,3 @@ jekyll serve            # Jekyll dev server
 ---
 
 **Ready for implementation! 🚀**
-
