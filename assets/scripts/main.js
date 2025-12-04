@@ -23,12 +23,41 @@
     const about = document.getElementById('about-content'); about.innerHTML = '<p>'+escapeHtml(data.about)+'</p>';
     // Experience
     const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${escapeHtml(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p><p>${escapeHtml(e.description)}</p></article>`).join('');
+      const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${escapeHtml(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
     // Skills
     const skills = document.getElementById('skills-content'); skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
     // Education
     const edu = document.getElementById('education-content'); edu.innerHTML = data.education.map(d=>`<div><strong>${escapeHtml(d.degree)}</strong> — ${escapeHtml(d.school)} <span class="muted">(${escapeHtml(d.year)})</span></div>`).join('');
     // Projects
     const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(p.desc)}</p><a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
+      const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4>${renderMarkdown(p.desc)}<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
+      // Minimal Markdown renderer: supports **bold** and unordered lists (- item)
+      function renderMarkdown(md){
+        if(!md) return '';
+        const raw = String(md).replace(/\r\n?/g,'\n');
+        const lines = raw.split('\n');
+        let out = '';
+        let inList = false;
+
+        for(let i=0;i<lines.length;i++){
+          const line = lines[i].trim();
+          if(line.startsWith('- ')){
+            if(!inList){ out += '<ul>'; inList = true; }
+            const item = line.slice(2).trim();
+            const itemEsc = escapeHtml(item).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>');
+            out += '<li>'+itemEsc+'</li>';
+          } else if(line === ''){
+            if(inList){ out += '</ul>'; inList = false; }
+            // blank line -> paragraph separation (do nothing special here)
+          } else {
+            if(inList){ out += '</ul>'; inList = false; }
+            const escaped = escapeHtml(line).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>');
+            out += '<p>'+escaped+'</p>';
+          }
+        }
+        if(inList) out += '</ul>';
+        return out;
+      }
     // Contact & Social
     const contact = document.getElementById('contact-content'); contact.innerHTML = `<div><strong>Email:</strong> <a href="mailto:${escapeAttr(data.contact.email)}">${escapeHtml(data.contact.email)}</a></div><div><strong>Phone:</strong> ${escapeHtml(data.contact.phone)}</div><div class="muted">${escapeHtml(data.contact.location)}</div>`;
     const social = document.getElementById('social-content'); social.innerHTML = data.social.map(s=>`<a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)}</a>`).join(' | ');
