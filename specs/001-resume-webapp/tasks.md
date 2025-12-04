@@ -85,13 +85,13 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T026 [US2] Add language data structure to `resume-data.js`: all fields (about, experience, skills, education, contact, social, projects) have fr and en keys
-- [ ] T027 [US2] Implement `setLanguage(lang)` function: update activeLanguage state, save to localStorage, call renderResume(lang)
-- [ ] T028 [US2] Add language toggle button in header with current language display (e.g., "English" / "Français")
-- [ ] T029 [US2] Update `renderResume()` to use activeLanguage and fetch all content from resumeData[activeLanguage]
-- [ ] T030 [US2] Verify all UI text (button labels, section titles, meta tags) exists in both languages in resume-data.js
-- [ ] T031 [US2] Test language switching: toggle at least 5 times, verify no console errors, all content updates
-- [ ] T032 [US2] Manual QA: load page in FR, refresh (should stay FR); load in EN, switch to FR, refresh (should stay FR)
+- [X] T026 [US2] Add language data structure to `resume-data.js`: all fields (about, experience, skills, education, contact, social, projects) have fr and en keys
+- [X] T027 [US2] Implement `setLanguage(lang)` function: update activeLanguage state, save to localStorage, call renderResume(lang)
+- [X] T028 [US2] Add language toggle button in header with current language display (e.g., "English" / "Français")
+- [X] T029 [US2] Update `renderResume()` to use activeLanguage and fetch all content from resumeData[activeLanguage]
+- [X] T030 [US2] Verify all UI text (button labels, section titles, meta tags) exists in both languages in resume-data.js
+- [X] T031 [US2] Test language switching: toggle at least 5 times, verify no console errors, all content updates
+- [X] T032 [US2] Manual QA: load page in FR, refresh (should stay FR); load in EN, switch to FR, refresh (should stay FR)
 
 **Checkpoint**: US2 complete — language switcher works; bilingual content fully translated and persists across sessions.
 
@@ -113,7 +113,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
  - [X] T035 [US3] Create `assets/scripts/pdf-export.js` with PDFExporter class using jsPDF + html2canvas or print-to-PDF API
  - [X] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
  - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
-- [ ] T038 [US3] Add print stylesheet optimization in `assets/styles/print.css` (page breaks, margins, hide controls, preserve colors for PDF)
+ - [X] T038 [US3] Add print stylesheet optimization in `assets/styles/print.css` (page breaks, margins, hide controls, preserve colors for PDF)
 - [ ] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
 - [ ] T040 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
 - [ ] T041 [US3] Manual QA: PDF opens in Adobe Reader, Google Drive, web browser; content is readable and printable
@@ -135,14 +135,14 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T044 [P] [US4] Define CSS custom properties in `assets/styles/theme.css` for both modes:
+- [X] T044 [P] [US4] Define CSS custom properties in `assets/styles/theme.css` for both modes:
   - Light mode: --bg-primary, --text-primary, --accent, --border
   - Dark mode: same properties with inverted values
-- [ ] T045 [P] [US4] Update `assets/styles/main.css` and all section styles to use CSS variables instead of hardcoded colors
-- [ ] T046 [US4] Implement `toggleTheme()` function: switch `[data-theme]` attribute on document.documentElement, save to localStorage
-- [ ] T047 [US4] Add theme toggle button in header (sun/moon icon or text label)
-- [ ] T048 [US4] Update localStorage to include theme preference; load on app initialization
-- [ ] T049 [US4] Ensure smooth transitions: add CSS transition to color properties (~300ms) for fade effect
+- [X] T045 [P] [US4] Update `assets/styles/main.css` and all section styles to use CSS variables instead of hardcoded colors
+- [X] T046 [US4] Implement `toggleTheme()` function: switch `[data-theme]` attribute on document.documentElement, save to localStorage
+- [X] T047 [US4] Add theme toggle button in header (sun/moon icon or text label)
+- [X] T048 [US4] Update localStorage to include theme preference; load on app initialization
+- [X] T049 [US4] Ensure smooth transitions: add CSS transition to color properties (~300ms) for fade effect
 - [ ] T050 [US4] Verify WCAG AA contrast: use online tool or axe-core to validate both themes meet 4.5:1 minimum
 - [ ] T051 [US4] Manual QA: toggle theme multiple times; verify no layout shifts; content remains readable in both modes
 
@@ -183,8 +183,8 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 - [ ] T062 [P] Accessibility: Full a11y audit (axe-core or Lighthouse); fix all violations; test keyboard navigation (Tab, Enter, Arrow keys)
 - [ ] T063 [P] SEO: Add meta tags (title, description, og:image, og:url, schema.org markup for Person + Resume)
 - [ ] T064 [P] Performance: Minify CSS and JS; optimize images (WebP format, responsive srcset); target Lighthouse 90+ score
-- [ ] T065 [P] Create `README.md` with setup instructions, customization guide, deployment steps for GitHub Pages / Vercel / Netlify
-- [ ] T066 [P] Add `.gitignore`: node_modules/, dist/, build artifacts, local config (if needed)
+- [X] T065 [P] Create `README.md` with setup instructions, customization guide, deployment steps for GitHub Pages / Vercel / Netlify
+- [X] T066 [P] Add `.gitignore`: node_modules/, dist/, build artifacts, local config (if needed)
 - [ ] T067 Create GitHub Actions workflow (optional) for lighthouse CI, link checker, accessibility audit
  - [ ] T068 Test on real devices: iPhone 12/14, Android phone, tablet (iPad); test on slow network (3G simulation)
  - [X] T069 Create sample resume data in both languages (`resume-data.js` template with placeholder content)
