@@ -49,6 +49,14 @@ p{margin:0.5rem 0}
 a{color:var(--accent);text-decoration:none;transition:var(--transition)}
 a:hover{text-decoration:underline;opacity:0.8}
 
+/* Inline markdown elements */
+em{font-style:italic;color:var(--text)}
+code{font-family:'Courier New',Courier,monospace;background:var(--border);padding:0.1rem 0.3rem;border-radius:3px;font-size:0.9em;color:var(--text)}
+strong{font-weight:600}
+
+ul{margin:0.5rem 0;padding-left:1.5rem}
+li{margin:0.25rem 0}
+
 /* Utility */
 .muted{color:var(--muted);transition:var(--transition)}
 .date{font-size:0.9rem;color:var(--muted)}

@@ -20,16 +20,16 @@
 
   function renderResume(){ const lang = prefs.lang || 'en'; const data = window.resumeData && window.resumeData[lang]; if(!data) return;
     // About
-    const about = document.getElementById('about-content'); about.innerHTML = '<p>'+escapeHtml(data.about)+'</p>';
+    const about = document.getElementById('about-content'); about.innerHTML = '<p>'+renderMarkdown(data.about)+'</p>';
     // Experience
-      const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${escapeHtml(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
+      const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${renderMarkdown(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
     // Skills
     const skills = document.getElementById('skills-content'); skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
     // Education
     const edu = document.getElementById('education-content'); edu.innerHTML = data.education.map(d=>`<div><strong>${escapeHtml(d.degree)}</strong> — ${escapeHtml(d.school)} <span class="muted">(${escapeHtml(d.year)})</span></div>`).join('');
     // Projects
       const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4>${renderMarkdown(p.desc)}<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
-      // Minimal Markdown renderer: supports **bold** and unordered lists (- item)
+      // Markdown renderer: supports **bold**, *italic*, `code`, [link](url), and - lists
       function renderMarkdown(md){
         if(!md) return '';
         const raw = String(md).replace(/\r\n?/g,'\n');
@@ -37,20 +37,31 @@
         let out = '';
         let inList = false;
 
+        function processInline(text){
+          // Escape HTML first, then apply markdown
+          let s = escapeHtml(text);
+          // Links: [text](url) -> <a href="url">text</a>
+          s = s.replace(/\[([^\]]+)\]\(([^\)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+          // Bold: **text** or __text__
+          s = s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__(.+?)__/g,'<strong>$1</strong>');
+          // Italic: *text* or _text_ (but not if part of bold)
+          s = s.replace(/\*([^\*]+)\*/g,'<em>$1</em>').replace(/_([^_]+)_/g,'<em>$1</em>');
+          // Inline code: `code`
+          s = s.replace(/`([^`]+)`/g,'<code>$1</code>');
+          return s;
+        }
+
         for(let i=0;i<lines.length;i++){
           const line = lines[i].trim();
           if(line.startsWith('- ')){
             if(!inList){ out += '<ul>'; inList = true; }
             const item = line.slice(2).trim();
-            const itemEsc = escapeHtml(item).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>');
-            out += '<li>'+itemEsc+'</li>';
+            out += '<li>'+processInline(item)+'</li>';
           } else if(line === ''){
             if(inList){ out += '</ul>'; inList = false; }
-            // blank line -> paragraph separation (do nothing special here)
           } else {
             if(inList){ out += '</ul>'; inList = false; }
-            const escaped = escapeHtml(line).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__([^_]+)__/g,'<strong>$1</strong>');
-            out += '<p>'+escaped+'</p>';
+            out += '<p>'+processInline(line)+'</p>';
           }
         }
         if(inList) out += '</ul>';
