@@ -22,7 +22,7 @@
     // About
     const about = document.getElementById('about-content'); about.innerHTML = '<p>'+renderMarkdown(data.about)+'</p>';
     // Experience
-      const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} — ${renderMarkdown(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
+      const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} ${renderMarkdown(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
     // Skills
     const skills = document.getElementById('skills-content'); skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
     // Education
@@ -38,16 +38,34 @@
         let inList = false;
 
         function processInline(text){
-          // Escape HTML first, then apply markdown
+          // Escape HTML first
           let s = escapeHtml(text);
-          // Links: [text](url) -> <a href="url">text</a>
-          s = s.replace(/\[([^\]]+)\]\(([^\)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+          // Tokenize links FIRST, including their label text, to protect against
+          // underscore/italic conflicts in both URL and label
+          const linkTokens = [];
+          s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_, label, url){
+            const idx = linkTokens.length;
+            const href = escapeAttr(url);
+            // Do NOT escape label yet; process markdown inside it separately if needed
+            linkTokens.push({label, href});
+            return `@@LINK${idx}@@`;
+          });
+
           // Bold: **text** or __text__
           s = s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/__(.+?)__/g,'<strong>$1</strong>');
-          // Italic: *text* or _text_ (but not if part of bold)
+          // Italic: *text* or _text_
           s = s.replace(/\*([^\*]+)\*/g,'<em>$1</em>').replace(/_([^_]+)_/g,'<em>$1</em>');
           // Inline code: `code`
           s = s.replace(/`([^`]+)`/g,'<code>$1</code>');
+
+          // Restore tokenized links with fully escaped content
+          s = s.replace(/@@LINK(\d+)@@/g, function(_, n){
+            const link = linkTokens[Number(n)];
+            if(!link) return '';
+            const inner = escapeHtml(link.label);
+            return `<a href="${link.href}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+          });
           return s;
         }
 
