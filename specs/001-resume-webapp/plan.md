@@ -7,7 +7,7 @@
 
 ## Summary
 
-Build a bilingual (FR/EN), static-first resume web app with vanilla HTML/CSS/JavaScript. Core features: resume sections (About, Experience, Skills, Education, Contact, Social), language switcher, Dark/Light theme toggle, client-side PDF export, and a Projects showcase section for future portfolio expansion. Application architecture prioritizes zero server dependencies, manual HTML/CSS/JS customization, and privacy-first design (no trackers, no analytics by default).
+Build a bilingual (FR/EN), static-first resume web app with vanilla HTML/CSS/JavaScript. Core features: resume sections (About with optional profile photo, Experience, Skills organized by category, Education, Contact, Social), language switcher, Dark/Light theme toggle, client-side PDF export, and a Projects showcase section for future portfolio expansion. Application architecture prioritizes zero server dependencies, manual HTML/CSS/JS customization, and privacy-first design (no trackers, no analytics by default).
 
 ## Technical Context
 

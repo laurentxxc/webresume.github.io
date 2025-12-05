@@ -30,7 +30,10 @@
     updateSectionTitle('projects', 'projects');
     
     // About
-    const about = document.getElementById('about-content'); about.innerHTML = '<p>'+renderMarkdown(data.about)+'</p>';
+    const about = document.getElementById('about-content');
+    const profileImg = data.profileImage ? `<img src="${escapeAttr(data.profileImage)}" alt="Profile photo" class="profile-photo" />` : '';
+    const aboutHTML = profileImg ? `<div class="about-wrapper"><div class="about-photo">${profileImg}</div><div class="about-text"><p>${renderMarkdown(data.about)}</p></div></div>` : `<p>${renderMarkdown(data.about)}</p>`;
+    about.innerHTML = aboutHTML;
     // Experience
       const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} ${renderMarkdown(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
     // Skills

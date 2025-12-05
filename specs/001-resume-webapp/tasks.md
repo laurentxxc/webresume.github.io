@@ -58,6 +58,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 ### Implementation for User Story 1
 
  - [X] T014 [P] [US1] Create About section template in `index.html` with profile text and optional photo in `assets/images/`
+ - [ ] T014.1 [US1] Add profile photo to About section: display on left (25% max width), responsive stacking on mobile
  - [X] T015 [P] [US1] Create Experience section template with job entries (company, role, dates, description, bullets)
  - [X] T016 [P] [US1] Create Skills section template with skill cards (name, category, level)
  - [X] T017 [P] [US1] Create Education section template with degree entries (institution, degree, field, graduation date)

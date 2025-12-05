@@ -18,8 +18,8 @@ An end user visits the site and reads the resume content.
 
 **Acceptance Scenarios**:
 
-1. **Given** the site is loaded, **When** the user visits the page, **Then** the page displays About, Work Experience, Skills, Education, Contact and Social links.
-2. **Given** mobile viewport, **When** the user loads the page, **Then** layout adapts and remains readable.
+1. **Given** the site is loaded, **When** the user visits the page, **Then** the page displays About (with optional profile photo), Work Experience, Skills, Education, Contact and Social links.
+2. **Given** mobile viewport, **When** the user loads the page, **Then** layout adapts and remains readable (profile photo stacks above text on small screens).
 
 ---
 
@@ -91,7 +91,7 @@ The site includes a Projects section to present web app projects and games.
 
 ### Functional Requirements
 
-- **FR-001**: The site MUST display the standard resume sections: About, Work Experience, Skills (organized by category), Education, Contact, Social Links.
+- **FR-001**: The site MUST display the standard resume sections: About (with optional profile photo displayed on the left, max 25% width), Work Experience, Skills (organized by category), Education, Contact, Social Links.
 - **FR-002**: The site MUST provide a language switcher for French and English; switching changes all textual content.
 - **FR-003**: The site MUST provide an `Export PDF` control which produces a downloadable/printable PDF of the resume in the active language.
 - **FR-004**: The site MUST provide a theme toggle (Dark/Light) that updates the visual presentation persistently during the session.
@@ -101,8 +101,9 @@ The site includes a Projects section to present web app projects and games.
 
 ### Key Entities *(include if feature involves data)*
 
-- **Resume**: Logical document composed of Sections.
+- **Resume**: Logical document composed of Sections, optionally including a profile photo.
 - **Section**: e.g., About, Experience, Skills, Education, Contact, Projects.
+- **About**: Introduction section with optional profile photo (left-aligned, max 25% width) and biography text.
 - **Experience**: Employer, role, start/end dates, summary, bullets.
 - **Education**: Institution, degree, dates, notes.
 - **Skill**: Organized by category (e.g., Languages, Tools, Methodologies). Each skill has a name and optional level/tag.

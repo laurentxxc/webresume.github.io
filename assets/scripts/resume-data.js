@@ -1,8 +1,9 @@
 /* Generic placeholder resume data (EN / FR) — replace with your real data */
 window.resumeData = {
   en: {
+    profileImage: "assets/images/profile.svg",
     sectionTitles: {
-      about: "About",
+      about: "About Me",
       experience: "Experience",
       skills: "Skills",
       education: "Education",
@@ -47,10 +48,16 @@ window.resumeData = {
         - Designed and implemented [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) Software stack for MHP middleware."},
     ],
     skills: {
-      "Languages": ["JavaScript", "Python", "Java", "C++"],
-      "Web Technologies": ["HTML", "CSS", "React", "Node.js"],
-      "Tools & Platforms": ["Git", "Docker", "Jira", "Linux"],
-      "Soft Skills": ["Accessibility", "Documentation", "Team Leadership", "Project Management"]
+      "📺 Digital TV":["DVB Frontend", "DSM-CC", "IPTV", "HW SoC", "Secure boot", "Trusted Execution Engine", "cybersecurity", "Android TV", "RDK-V", "Linux", "CA/DRM"],
+      "♻️ Product Lifecycle": ["Device Manufacturing", "CE Regulations", "Device Provisioning", "First Time Installation", "Refurbishing", "OTA upgrade", "Remote Management"],
+      "⚙️ SW Engineering": ["Requirement Management", "Modular Design", "UML", "Open Source Usage", "Technology roadmap"],
+      "🎁 Product Management":["Customer support", "RFQ answer", "Product Definition","Product roadmap"],
+      "🚦 Project Management" :["Agile", "Scrum", "Kanban board", "Waterfall"],
+      "🛠️ Tools & Platforms": ["Git", "Jira", "Confluence", "Markdown", "Docker", "Linux", "JupyterLab", "Visual Studio Code", "Markdown"],
+      "🛜 Networking": ["TCP/UDP", "IPv4/IPv6", "HTTPS", "DHCP", "RTP/RTSP", "mTLS", "Wi-Fi", "Bluetooth", "TR-069", "MQTT", "XMPP","WireShark"],
+      "🕸️ Web Technologies": ["HTML", "CSS", "Node.js", "Express", "Angular"],
+      "✏️ Coding Languages": ["Python", "JavaScript", "Java", "C++", "Kotlin", "SwiftfUI", "Rust"],
+      "👤 Soft Skills": ["Teamwork", "Communication", "Adaptability", "Problem Solving", "Abstract thinking", "Cross-function","Curiosity"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
     contact: {email: "you@example.com", phone: "+1 (555) 555-5555", location: "Achères, France"},
@@ -60,6 +67,7 @@ window.resumeData = {
         - Use/evaluate Speckit (Spec Driven Development) and generate code with AI.",link:"#"}]
   },
   fr: {
+    profileImage: "assets/images/profile.svg",
     sectionTitles: {
       about: "À Propos",
       experience: "Expérience",
@@ -106,10 +114,16 @@ window.resumeData = {
         - Conçu et implémenté la pile logicielle [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) pour le middleware MHP utilisé par Philips."},
     ],
     skills: {
-      "Langages": ["JavaScript", "Python", "Java", "C++"],
-      "Technologies Web": ["HTML", "CSS", "React", "Node.js"],
-      "Outils & Plateformes": ["Git", "Docker", "Jira", "Linux"],
-      "Compétences Transversales": ["Accessibilité", "Documentation", "Leadership d'équipe", "Gestion de Projet"]
+      "📺 TV Numérique":["DVB Frontend", "DSM-CC", "IPTV", "HW SoC", "Secure boot", "Trusted Execution Engine", "cybersecurity", "Android TV", "RDK-V", "Linux", "CA/DRM"],
+      "♻️ Cycle de Vie du produit": ["Fabrication usine", "Réglementations européennes", "Provisionnement de l'appareil", "Première utilisation", "Refurbishing", "Mise à jour terrain", "Gestion à distance"],
+      "⚙️ Savoir-Faire logiciel": ["Gestion des spécifications", "Architecture Modulaire", "UML", "Utilisation du code open source", "Feuille de route technologique"],
+      "🎁 Gestion de produit":["Support Client", "Réponse d'appel d'offre", "Définition du produit","Feuille de route du produit"],
+      "🚦 Gestion de projet" :["Agile", "Scrum", "Kanban board", "Waterfall"],
+      "🛠️ Outils Logiciels": ["Git", "Jira", "Confluence", "Markdown", "Docker", "Linux", "JupyterLab", "Visual Studio Code", "Markdown" ],
+      "🛜 Communication réseau": ["TCP/UDP", "IPv4/IPv6", "HTTPS", "DHCP", "RTP/RTSP", "mTLS", "Wi-Fi", "Bluetooth", "TR-069", "MQTT", "XMPP","WireShark"],
+      "🕸️ Technologies du Web": ["HTML", "CSS", "Node.js", "Express", "Angular", "MongoDB"],
+      "✏️ Languages de programmation": ["Python", "JavaScript", "Java", "C++", "Kotlin", "SwiftfUI", "Rust"],
+      "👤 Savoir-Être": ["Travial en équipe", "Communication", "Adaptabilité", "Résolution de problèmes", "Capacité d'abstraction", "Vue transversale","Curiosité"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
