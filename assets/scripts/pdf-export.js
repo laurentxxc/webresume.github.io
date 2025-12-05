@@ -32,7 +32,44 @@
     }
 
     async exportToPDF(options={}){
-      const filename = options.filename || `resume-${(new Date()).toISOString().slice(0,10)}.pdf`;
+      // Build a safe filename: include owner name (if available) and language code (EN/FR)
+      const dateStr = (new Date()).toISOString().slice(0,10);
+      // determine language: options.lang > localStorage prefs > resumeData keys > default 'en'
+      let lang = options.lang;
+      if(!lang){
+        try{
+          const raw = localStorage.getItem('webresume:prefs');
+          if(raw){ const p = JSON.parse(raw); if(p && p.lang) lang = p.lang; }
+        }catch(e){}
+      }
+      if(!lang && window.resumeData){ lang = window.resumeData.en ? 'en' : Object.keys(window.resumeData)[0]; }
+      lang = (lang || 'en').toLowerCase();
+      const langCode = (lang || 'en').toUpperCase();
+
+      // Owner detection: options.owner > resumeData[lang].owner > resumeData[lang].contact.name/fullname > fallback to 'resume'
+      let ownerRaw = options.owner || '';
+      try{
+        if(!ownerRaw && window.resumeData){
+          const rd = window.resumeData[lang] || window.resumeData.en || Object.values(window.resumeData)[0];
+          if(rd){
+            if(rd.owner && (rd.owner.firstname || rd.owner.lastname)){
+              ownerRaw = `${rd.owner.firstname || ''} ${rd.owner.lastname || ''}`.trim();
+            } else if(rd.contact && (rd.contact.name || rd.contact.fullname)){
+              ownerRaw = rd.contact.name || rd.contact.fullname;
+            }
+          }
+        }
+        // fallback to top-level owner if language-specific owner not present
+        if(!ownerRaw && window.resumeData && window.resumeData.owner && (window.resumeData.owner.firstname || window.resumeData.owner.lastname)){
+          ownerRaw = `${window.resumeData.owner.firstname || ''} ${window.resumeData.owner.lastname || ''}`.trim();
+        }
+      }catch(e){ ownerRaw = ownerRaw || ''; }
+
+      let ownerSlug = ownerRaw ? String(ownerRaw).toLowerCase().replace(/\s+/g,'-') : '';
+      ownerSlug = ownerSlug.replace(/[^a-z0-9-_]/g,'-').replace(/-+/g,'-').replace(/(^-|-$)/g,'');
+      if(!ownerSlug) ownerSlug = 'resume';
+
+      const filename = options.filename || `resume-${ownerSlug}-${langCode}-${dateStr}.pdf`;
       const scale = options.scale || 1.2; // rendering scale for canvas
       const format = (options.format || 'a4').toLowerCase();
       const margin = (typeof options.margin === 'number') ? options.margin : 20; // points
