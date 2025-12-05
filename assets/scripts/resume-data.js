@@ -38,7 +38,7 @@ window.resumeData = {
         - Designed and implemented [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) Software stack for MHP middleware."},
     ],
     skills: ["HTML","CSS","JavaScript","Accessibility"],
-    education: [{school: "INSA Rennes", degree: "M.Sc. Computer Science", year: "1997"}],
+    education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
     contact: {email: "you@example.com", phone: "+1 (555) 555-5555", location: "Achères, France"},
     social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],
     projects: [{title:"Resume Webapp",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
@@ -83,7 +83,7 @@ window.resumeData = {
         - Conçu et implémenté la pile logicielle [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) pour le middleware MHP utilisé par Philips."},
     ],
     skills: ["HTML","CSS","JavaScript","Accessibilité"],
-    education: [{school: "INSA Rennes", degree: "Ingénieur Informatique", year: "1997"}],
+    education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
     social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],
     projects: [{title:"CV Webapp",desc:"Web app pour affiché mon CV. L'application a été créée avec les objectifs suivants :\n\
