@@ -46,7 +46,12 @@ window.resumeData = {
         - Endorsed as technical coordinator for MHP 1.0.2a and 1.0.2b conformance test suite issues.\n\
         - Designed and implemented [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) Software stack for MHP middleware."},
     ],
-    skills: ["HTML","CSS","JavaScript","Accessibility"],
+    skills: {
+      "Languages": ["JavaScript", "Python", "Java", "C++"],
+      "Web Technologies": ["HTML", "CSS", "React", "Node.js"],
+      "Tools & Platforms": ["Git", "Docker", "Jira", "Linux"],
+      "Soft Skills": ["Accessibility", "Documentation", "Team Leadership", "Project Management"]
+    },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
     contact: {email: "you@example.com", phone: "+1 (555) 555-5555", location: "Achères, France"},
     social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],
@@ -100,7 +105,12 @@ window.resumeData = {
         - Contribué à la mise au point de la suite de tests de conformité MHP 1.0.2a et 1.0.2b.\n\
         - Conçu et implémenté la pile logicielle [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) pour le middleware MHP utilisé par Philips."},
     ],
-    skills: ["HTML","CSS","JavaScript","Accessibilité"],
+    skills: {
+      "Langages": ["JavaScript", "Python", "Java", "C++"],
+      "Technologies Web": ["HTML", "CSS", "React", "Node.js"],
+      "Outils & Plateformes": ["Git", "Docker", "Jira", "Linux"],
+      "Compétences Transversales": ["Accessibilité", "Documentation", "Leadership d'équipe", "Gestion de Projet"]
+    },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
     social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],

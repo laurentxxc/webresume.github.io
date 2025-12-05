@@ -34,7 +34,16 @@
     // Experience
       const exp = document.getElementById('experience-content'); exp.innerHTML = data.experience.map(e=>`<article class="job"><h3>${escapeHtml(e.role)} ${renderMarkdown(e.company)}</h3><p class="muted">${escapeHtml(e.dates)}</p>${renderMarkdown(e.description)}</article>`).join('');
     // Skills
-    const skills = document.getElementById('skills-content'); skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
+    const skills = document.getElementById('skills-content'); 
+    if (data.skills && typeof data.skills === 'object' && !Array.isArray(data.skills)) {
+      // Categorized skills
+      skills.innerHTML = Object.entries(data.skills).map(([category, skillList]) => 
+        `<div class="skill-category"><h3 class="category-title">${escapeHtml(category)}</h3><div class="skill-items">${skillList.map(s => `<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ')}</div></div>`
+      ).join('');
+    } else {
+      // Fallback for flat array
+      skills.innerHTML = data.skills.map(s=>`<span class="skill-chip">${escapeHtml(s)}</span>`).join(' ');
+    }
     // Education
     const edu = document.getElementById('education-content'); edu.innerHTML = data.education.map(d=>`<div><strong>${escapeHtml(d.degree)}</strong> — ${renderMarkdownInline(d.school)} <span class="muted">(${escapeHtml(d.year)})</span></div>`).join('');
     // Projects

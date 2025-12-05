@@ -91,7 +91,7 @@ The site includes a Projects section to present web app projects and games.
 
 ### Functional Requirements
 
-- **FR-001**: The site MUST display the standard resume sections: About, Work Experience, Skills, Education, Contact, Social Links.
+- **FR-001**: The site MUST display the standard resume sections: About, Work Experience, Skills (organized by category), Education, Contact, Social Links.
 - **FR-002**: The site MUST provide a language switcher for French and English; switching changes all textual content.
 - **FR-003**: The site MUST provide an `Export PDF` control which produces a downloadable/printable PDF of the resume in the active language.
 - **FR-004**: The site MUST provide a theme toggle (Dark/Light) that updates the visual presentation persistently during the session.
@@ -105,7 +105,7 @@ The site includes a Projects section to present web app projects and games.
 - **Section**: e.g., About, Experience, Skills, Education, Contact, Projects.
 - **Experience**: Employer, role, start/end dates, summary, bullets.
 - **Education**: Institution, degree, dates, notes.
-- **Skill**: Name, level/category, optional tags.
+- **Skill**: Organized by category (e.g., Languages, Tools, Methodologies). Each skill has a name and optional level/tag.
 - **Contact**: Email, optional contact form metadata (if present).
 - **Project**: Title, short description, optional link, screenshots.
 
