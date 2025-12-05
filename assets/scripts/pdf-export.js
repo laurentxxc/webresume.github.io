@@ -33,16 +33,18 @@
 
     async exportToPDF(options={}){
       const filename = options.filename || `resume-${(new Date()).toISOString().slice(0,10)}.pdf`;
-      const scale = options.scale || 1.4;
-      const format = options.format || 'A4';
+      const scale = options.scale || 1.2; // rendering scale for canvas
+      const format = (options.format || 'a4').toLowerCase();
+      const margin = (typeof options.margin === 'number') ? options.margin : 20; // points
 
       document.dispatchEvent(new CustomEvent('resume:pdf-export-start',{detail:{filename}}));
       this.status = 'generating';
 
+      let savedTheme;
       try{
         await this.ensureLibs();
         // temporarily force light theme for PDF export (better contrast)
-        const savedTheme = document.documentElement.getAttribute('data-theme');
+        savedTheme = document.documentElement.getAttribute('data-theme');
         document.documentElement.setAttribute('data-theme', 'light');
         // add print-optimized styles for high contrast
         const styleEl = document.createElement('style');
@@ -58,24 +60,47 @@
           .controls { display: none !important; }
         `;
         document.head.appendChild(styleEl);
+
         // get element to export
         const node = document.getElementById('resume-root') || document.body;
         // render to canvas with white background for readability
         const canvas = await window.html2canvas(node, {scale, useCORS:true, logging:false, backgroundColor:'#ffffff'});
-        const imgData = canvas.toDataURL('image/png');
 
-        // A4 size in points (jsPDF uses pt by default)
-        const pdf = new this.jsPDF({unit:'pt',format:format.toLowerCase()});
+        // prepare PDF document
+        const pdf = new this.jsPDF({unit:'pt',format:format});
         const pageWidth = pdf.internal.pageSize.getWidth();
         const pageHeight = pdf.internal.pageSize.getHeight();
 
-        // calculate image dims to fit page width while preserving ratio
-        const imgProps = {width: canvas.width, height: canvas.height};
-        const ratio = imgProps.width / imgProps.height;
-        const imgWidth = pageWidth - 40; // margins
-        const imgHeight = imgWidth / ratio;
+        // convert page dimensions to canvas pixels
+        const pxPerPt = canvas.width / pageWidth;
+        const marginPx = Math.round(margin * pxPerPt);
+        const usablePageHeightPx = Math.floor(pageHeight * pxPerPt) - (marginPx * 2);
 
-        pdf.addImage(imgData, 'PNG', 20, 20, imgWidth, imgHeight);
+        let position = 0;
+        let pageCount = 0;
+        while(position < canvas.height){
+          const sliceHeight = Math.min(usablePageHeightPx, canvas.height - position);
+          // create temporary canvas for slice
+          const sliceCanvas = document.createElement('canvas');
+          sliceCanvas.width = canvas.width;
+          sliceCanvas.height = sliceHeight;
+          const ctx = sliceCanvas.getContext('2d');
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0,0,sliceCanvas.width,sliceCanvas.height);
+          ctx.drawImage(canvas, 0, position, canvas.width, sliceHeight, 0, 0, sliceCanvas.width, sliceCanvas.height);
+
+          const imgData = sliceCanvas.toDataURL('image/png');
+          const imgRatio = sliceCanvas.width / sliceCanvas.height;
+          const imgWidth = pageWidth - (margin * 2);
+          const imgHeight = imgWidth / imgRatio;
+
+          if(pageCount > 0) pdf.addPage();
+          pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+
+          position += sliceHeight;
+          pageCount++;
+        }
+
         this.status = 'downloading';
         pdf.save(filename);
         this.status = 'idle';
@@ -88,7 +113,7 @@
         this.status = 'error';
         document.dispatchEvent(new CustomEvent('resume:pdf-export-error',{detail:{error:err}}));
         // restore original theme on error
-        document.documentElement.setAttribute('data-theme', savedTheme || 'light');
+        if(savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
         document.getElementById('pdf-export-styles')?.remove();
         // fallback: open print dialog
         try{ window.print() }catch(e){}
