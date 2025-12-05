@@ -124,6 +124,18 @@
     const langBtn = document.getElementById('lang-toggle'); if(langBtn) langBtn.addEventListener('click', ()=>{ toggleLanguage(); });
     const themeBtn = document.getElementById('theme-toggle'); if(themeBtn) themeBtn.addEventListener('click', ()=>{ toggleTheme(); });
     const exportBtn = document.getElementById('export-pdf'); if(exportBtn) exportBtn.addEventListener('click', ()=>{ if(window.exportPDF) window.exportPDF(); else window.print(); });
+
+    // Listen to PDF export lifecycle events to disable/enable the export button
+    document.addEventListener('resume:pdf-export-start', ()=> setExportDisabled(true));
+    document.addEventListener('resume:pdf-export-complete', ()=> setExportDisabled(false));
+    document.addEventListener('resume:pdf-export-error', ()=> setExportDisabled(false));
+  }
+
+  function setExportDisabled(disabled){
+    const btn = document.getElementById('export-pdf');
+    if(!btn) return;
+    btn.disabled = !!disabled;
+    if(disabled){ btn.setAttribute('aria-busy','true'); } else { btn.removeAttribute('aria-busy'); }
   }
 
   function init(){ loadPrefs(); applyTheme(); updateLangButton(); wireEvents(); renderResume(); }

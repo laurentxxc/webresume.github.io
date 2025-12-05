@@ -23,6 +23,8 @@ body{background:var(--bg);color:var(--text);line-height:1.4;transition:var(--tra
 .controls{display:flex;gap:0.5rem}
 .controls button{padding:0.4rem 0.6rem;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--text);cursor:pointer;transition:var(--transition);font-size:0.95rem}
 .controls button:hover{background:var(--border);opacity:0.8}
+/* Disabled state for controls (used during PDF export) */
+.controls button:disabled{opacity:0.6;cursor:not-allowed}
 
 .container{max-width:900px;margin:1.25rem auto;padding:0 1rem}
 .section{margin-bottom:1.25rem;padding:1.25rem;border-radius:8px;border:1px solid var(--border);background:linear-gradient(135deg,transparent,rgba(0,0,0,0.02));transition:var(--transition)}
