@@ -19,6 +19,16 @@
   function updateLangButton(){ const b = document.getElementById('lang-toggle'); if(!b) return; b.textContent = prefs.lang === 'en' ? 'Français' : 'English' }
 
   function renderResume(){ const lang = prefs.lang || 'en'; const data = window.resumeData && window.resumeData[lang]; if(!data) return;
+    // Update section titles dynamically
+    const titles = data.sectionTitles || {};
+    const updateSectionTitle = (id, key) => { const el = document.querySelector(`#${id} h2`); if(el && titles[key]) el.textContent = titles[key]; };
+    updateSectionTitle('about', 'about');
+    updateSectionTitle('experience', 'experience');
+    updateSectionTitle('skills', 'skills');
+    updateSectionTitle('education', 'education');
+    updateSectionTitle('contact', 'contact');
+    updateSectionTitle('projects', 'projects');
+    
     // About
     const about = document.getElementById('about-content'); about.innerHTML = '<p>'+renderMarkdown(data.about)+'</p>';
     // Experience

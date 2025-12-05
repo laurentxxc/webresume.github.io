@@ -33,8 +33,8 @@ User can switch between French and English to read the resume copy.
 
 **Acceptance Scenarios**:
 
-1. **Given** the page is visible, **When** the user selects `Français`, **Then** all resume content updates to French.
-2. **Given** the page is visible, **When** the user selects `English`, **Then** all resume content updates to English.
+1. **Given** the page is visible, **When** the user selects `Français`, **Then** all resume content (including section titles: About→À Propos, Experience→Expérience, etc.) updates to French.
+2. **Given** the page is visible, **When** the user selects `English`, **Then** all resume content (including section titles) updates to English.
 
 ---
 

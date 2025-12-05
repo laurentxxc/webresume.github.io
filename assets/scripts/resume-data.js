@@ -1,6 +1,15 @@
 /* Generic placeholder resume data (EN / FR) — replace with your real data */
 window.resumeData = {
   en: {
+    sectionTitles: {
+      about: "About",
+      experience: "Experience",
+      skills: "Skills",
+      education: "Education",
+      contact: "Contact",
+      social: "Social",
+      projects: "Projects"
+    },
     about: "**Expert in systems engineering and software architecture** with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
     experience: [
       {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - Present", 
@@ -46,6 +55,15 @@ window.resumeData = {
         - Use/evaluate Speckit (Spec Driven Development) and generate code with AI.",link:"#"}]
   },
   fr: {
+    sectionTitles: {
+      about: "À Propos",
+      experience: "Expérience",
+      skills: "Compétences",
+      education: "Formation",
+      contact: "Contact",
+      social: "Réseaux",
+      projects: "Projets"
+    },
     about: "**Expert en ingénierie des systèmes et architecture logicielle** avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
