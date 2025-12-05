@@ -76,10 +76,10 @@ window.resumeData = {
         - Contribué au projet de recherche EU *[APPSGATE](https://www.catrene.org/web/downloads/profiles_catrene/CATRENE%20PP-CA110_AppsGate.pdf)* - Démonstrateur STB avancé conçu pour améliorer la fonctionnalité et les performances dans les domaines d'application domestiques."},
 
       {company: "[Philips](https://www.philips.com/)", role: "Consultant Concepteur Logiciel & Architecte MHP", dates: "1998 - 2003", 
-        description: "En tant que membre d'une équipe R&D  travaillant sur la pile logicielle [MHP](https://en.wikipedia.org/wiki/Multimedia_Home_Platform) (Multimedia Home Platform), j'ai supervisé l'architecture technique logicielle et la conception de composants autour de la norme MHP pour la TV interactive. En particulier, j'ai :\n\
-        - Dirigé la conception modulaire de la pile middleware [DVB](https://en.wikipedia.org/wiki/Digital_Video_Broadcasting) [MHP](https://en.wikipedia.org/wiki/Multimedia_Home_Platform) propriétaire (Multimedia Home Platform) pour les boîtiers Philips.\n\
+        description: "En tant que membre d'une équipe R&D  travaillant sur la pile logicielle MHP, j'ai supervisé l'architecture technique logicielle et la conception de composants autour de la norme MHP pour la TV interactive. En particulier, j'ai :\n\
+        - Dirigé la conception modulaire de la pile middleware [DVB](https://en.wikipedia.org/wiki/Digital_Video_Broadcasting) MHP propriétaire (Multimedia Home Platform) pour les boîtiers Philips.\n\
         - Fourni le support de conception et l'expertise technique à l'équipe de développement logiciel (jusqu'à 30 développeurs), la gestion des produits et d'autres sites de développement logiciel.\n\
-        - Contribué à la mise au point de la suite de tests de conformité [MHP 1.0.2a](https://en.wikipedia.org/wiki/Multimedia_Home_Platform) et 1.0.2b.\n\
+        - Contribué à la mise au point de la suite de tests de conformité MHP 1.0.2a et 1.0.2b.\n\
         - Conçu et implémenté la pile logicielle [DVB-SI](https://en.wikipedia.org/wiki/Service_Information) pour le middleware MHP utilisé par Philips."},
     ],
     skills: ["HTML","CSS","JavaScript","Accessibilité"],
