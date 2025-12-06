@@ -58,7 +58,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 ### Implementation for User Story 1
 
  - [X] T014 [P] [US1] Create About section template in `index.html` with profile text and optional photo in `assets/images/`
- - [ ] T014.1 [US1] Add profile photo to About section: display on left (25% max width), responsive stacking on mobile
+ - [X] T014.1 [US1] Add profile photo to About section: display on left (25% max width), responsive stacking on mobile
  - [X] T015 [P] [US1] Create Experience section template with job entries (company, role, dates, description, bullets)
  - [X] T016 [P] [US1] Create Skills section template with skill cards (name, category, level)
  - [X] T017 [P] [US1] Create Education section template with degree entries (institution, degree, field, graduation date)
@@ -92,7 +92,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 - [X] T029 [US2] Update `renderResume()` to use activeLanguage and fetch all content from resumeData[activeLanguage]
 - [X] T030 [US2] Verify all UI text (button labels, section titles, meta tags) exists in both languages in resume-data.js
 - [X] T030.1 [US2] Implement dynamic section title rendering: update main.js renderResume() to inject titles from resumeData[lang].sectionTitles into each h2 heading
-- [ ] T030.2 [US1] Organize skills by category: update resume-data.js structure from flat array to categorized object (Languages, Web Technologies, Tools & Platforms, Soft Skills)
+- [X] T030.2 [US1] Organize skills by category: update resume-data.js structure from flat array to categorized object (Languages, Web Technologies, Tools & Platforms, Soft Skills)
 - [X] T031 [US2] Test language switching: toggle at least 5 times, verify no console errors, all content updates
 - [X] T032 [US2] Manual QA: load page in FR, refresh (should stay FR); load in EN, switch to FR, refresh (should stay FR)
 
