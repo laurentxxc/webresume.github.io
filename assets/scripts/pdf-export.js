@@ -113,10 +113,55 @@
         const marginPx = Math.round(margin * pxPerPt);
         const usablePageHeightPx = Math.floor(pageHeight * pxPerPt) - (marginPx * 2);
 
+        // Build a list of breakpoints (section bottoms) in canvas pixels to avoid slicing inside a section.
+        const nodeRect = node.getBoundingClientRect();
+        const sectionNodes = node.querySelectorAll('.section, section');
+        // Also include fine-grained items inside large sections (experience jobs)
+        const experienceItems = node.querySelectorAll('#experience-content .job');
+        // And include skill category blocks to avoid breaking a category in two
+        const skillCategories = node.querySelectorAll('#skills-content .skill-category');
+        const breakpoints = [];
+        try{
+          sectionNodes.forEach(s => {
+            const r = s.getBoundingClientRect();
+            // compute bottom relative to node top (in DOM px), then convert to canvas px
+            const bottomDom = Math.max(0, r.bottom - nodeRect.top);
+            const bottomPx = Math.floor(bottomDom * (canvas.width / nodeRect.width));
+            if(bottomPx > 0 && bottomPx <= canvas.height) breakpoints.push(bottomPx);
+          });
+          experienceItems.forEach(s => {
+            const r = s.getBoundingClientRect();
+            const bottomDom = Math.max(0, r.bottom - nodeRect.top);
+            const bottomPx = Math.floor(bottomDom * (canvas.width / nodeRect.width));
+            // prefer to break after whole job entries; only include if inside node bounds
+            if(bottomPx > 0 && bottomPx <= canvas.height) breakpoints.push(bottomPx);
+          });
+          // add skill category bottoms so we only break between categories
+          skillCategories.forEach(s => {
+            const r = s.getBoundingClientRect();
+            const bottomDom = Math.max(0, r.bottom - nodeRect.top);
+            const bottomPx = Math.floor(bottomDom * (canvas.width / nodeRect.width));
+            if(bottomPx > 0 && bottomPx <= canvas.height) breakpoints.push(bottomPx);
+          });
+        }catch(e){ /* ignore if layout measurement fails */ }
+        // sort and dedupe
+        breakpoints.sort((a,b)=>a-b);
+        for(let i=breakpoints.length-1;i>0;i--){ if(breakpoints[i] === breakpoints[i-1]) breakpoints.splice(i,1); }
+
         let position = 0;
         let pageCount = 0;
         while(position < canvas.height){
-          const sliceHeight = Math.min(usablePageHeightPx, canvas.height - position);
+          const maxEnd = Math.min(canvas.height, position + usablePageHeightPx);
+          // find the nearest breakpoint <= maxEnd and > position
+          let chosenEnd = -1;
+          for(let i = breakpoints.length - 1; i >= 0; i--){
+            const bp = breakpoints[i];
+            if(bp > position && bp <= maxEnd){ chosenEnd = bp; break; }
+          }
+          // if no suitable breakpoint found, fallback to page bottom (may slice a large section)
+          if(chosenEnd === -1){ chosenEnd = Math.min(canvas.height, position + usablePageHeightPx); }
+
+          const sliceHeight = Math.max(1, chosenEnd - position);
           // create temporary canvas for slice
           const sliceCanvas = document.createElement('canvas');
           sliceCanvas.width = canvas.width;
@@ -134,7 +179,7 @@
           if(pageCount > 0) pdf.addPage();
           pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
 
-          position += sliceHeight;
+          position = chosenEnd;
           pageCount++;
         }
 
