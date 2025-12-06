@@ -1,9 +1,10 @@
 /* Generic placeholder resume data (EN / FR) — replace with your real data */
 window.resumeData = {
+  owner: {firstname: "Laurent", lastname:"Vincent"},
   en: {
     profileImage: "assets/images/en_anim_apple.png",
     sectionTitles: {
-      about: "About Me",
+      about: "About Laurent Vincent",
       experience: "Experience",
       skills: "Skills",
       education: "Education",
@@ -11,7 +12,7 @@ window.resumeData = {
       social: "Social",
       projects: "Projects"
     },
-    about: "**Expert in systems engineering and software architecture** with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
+    about: "Hi👋, my name is **Laurent**.\n\Expert in systems engineering and software architecture with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
     experience: [
       {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - Present", 
         description: "As part of an international team of product line managers, I was focus on the definition of new [set-top boxes (STB)](https://en.wikipedia.org/wiki/Set-top_box) products around [Android TV](https://www.android.com/tv/) platform. In particular, I have:\n\
@@ -60,16 +61,16 @@ window.resumeData = {
       "👤 Soft Skills": ["Teamwork", "Communication", "Adaptability", "Problem Solving", "Abstract thinking", "Cross-function","Curiosity"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
-    contact: {email: "you@example.com", phone: "+1 (555) 555-5555", location: "Achères, France"},
-    social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],
+    contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
+    social: [{name: "GitHub", url: "https://github.com/laurentxxc"},{name:"LinkedIn",url:"https://www.linkedin.com/in/lxxc"}],
     projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
-        - Use/evaluate Speckit (Spec Driven Development) and generate code with AI.",link:"#"}]
+        - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development) and generate code with AI.",link:"#"}]
   },
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
     sectionTitles: {
-      about: "À Propos",
+      about: "À Propos de Laurent Vincent",
       experience: "Expérience",
       skills: "Compétences",
       education: "Formation",
@@ -77,7 +78,7 @@ window.resumeData = {
       social: "Réseaux",
       projects: "Projets"
     },
-    about: "**Expert en ingénierie des systèmes et architecture logicielle** avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
+    about: "Salutations🖖, je me prénomme **Laurent**.\n\Expert en ingénierie des systèmes et architecture logicielle** avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
       {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Ingénieur Systèmes Distingué / Responsable Ligne Produits Vidéo", dates: "2024 - Présent", 
@@ -127,10 +128,10 @@ window.resumeData = {
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
-    social: [{name: "GitHub", url: "https://github.com/"},{name:"LinkedIn",url:"https://linkedin.com/"}],
+    social: [{name: "GitHub", url: "https://github.com/laurentxxc"},{name:"LinkedIn",url:"https://www.linkedin.com/in/lxxc"}],
     projects: [{title:"WebResume",desc:"Web app pour affiché mon CV. L'application a été créée avec les objectifs suivants :\n\
         - Faire un site web statique pouvant être hébergé gratuitement sur GitHub Pages (HTML/JS/CSS).\n\
-        - Utiliser et évaluer Speckit (Spec Driven Development) et générer le code avec l'IA.",
+        - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development) et générer le code avec l'IA.",
         link:"#"}]
   }
 };
