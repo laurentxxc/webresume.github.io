@@ -158,6 +158,29 @@
         // collect slices first so we can compute total pages for footer
         const slices = [];
         let position = 0;
+        // helper: detect if a canvas is visually blank (mostly white)
+        function isCanvasBlank(c){
+          try{
+            const ctx = c.getContext('2d');
+            const w = c.width, h = c.height;
+            // sample pixels instead of full scan for performance
+            const step = Math.max(1, Math.floor(Math.min(w,h)/20));
+            const data = ctx.getImageData(0,0,w,h).data;
+            for(let y=0;y<h;y+=step){
+              for(let x=0;x<w;x+=step){
+                const idx = (y*w + x) * 4;
+                const r = data[idx], g = data[idx+1], b = data[idx+2], a = data[idx+3];
+                // consider white-ish if RGB all above 250 and alpha > 0
+                if(a > 10 && (r < 250 || g < 250 || b < 250)) return false;
+              }
+            }
+            return true;
+          }catch(e){
+            // If we cannot access pixels (CORS), assume not blank to be safe
+            return false;
+          }
+        }
+
         while(position < canvas.height){
           const maxEnd = Math.min(canvas.height, position + usablePageHeightPx);
           // find the nearest breakpoint <= maxEnd and > position
@@ -178,8 +201,11 @@
           ctx.fillRect(0,0,sliceCanvas.width,sliceCanvas.height);
           ctx.drawImage(canvas, 0, position, canvas.width, sliceHeight, 0, 0, sliceCanvas.width, sliceCanvas.height);
 
-          const imgData = sliceCanvas.toDataURL('image/png');
-          slices.push({imgData, w: sliceCanvas.width, h: sliceCanvas.height});
+          // skip visually blank slices (commonly the trailing white area)
+          if(!isCanvasBlank(sliceCanvas)){
+            const imgData = sliceCanvas.toDataURL('image/png');
+            slices.push({imgData, w: sliceCanvas.width, h: sliceCanvas.height});
+          }
           position = chosenEnd;
         }
 
