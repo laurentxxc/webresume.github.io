@@ -210,9 +210,21 @@
           // skip visually blank slices (commonly the trailing white area)
           if(!isCanvasBlank(sliceCanvas)){
             const imgData = sliceCanvas.toDataURL('image/png');
-            slices.push({imgData, w: sliceCanvas.width, h: sliceCanvas.height});
+            // store canvas reference for possible post-facto checks (Safari may behave differently)
+            slices.push({imgData, w: sliceCanvas.width, h: sliceCanvas.height, canvas: sliceCanvas});
           }
           position = chosenEnd;
+        }
+
+        // Post-facto: if last slice still looks blank or is tiny, drop it (handles Safari edge-cases)
+        if(slices.length > 0){
+          const last = slices[slices.length-1];
+          try{
+            const tinyThreshold = Math.max(3, Math.floor(usablePageHeightPx * 0.03));
+            if(last && (isCanvasBlank(last.canvas) || last.h <= tinyThreshold)){
+              slices.pop();
+            }
+          }catch(e){ /* ignore post-facto checks */ }
         }
 
         // create PDF and render slices with header/footer
@@ -251,6 +263,9 @@
             try{ pdf.text(fText, fx, fy); }catch(e){ /* ignore */ }
           }
         }
+
+        // cleanup any stored canvas references to avoid leaks
+        slices.forEach(si=>{ if(si.canvas){ try{ si.canvas.width = 0; si.canvas.height = 0; }catch(e){} delete si.canvas; } });
 
         this.status = 'downloading';
         pdf.save(filename);
