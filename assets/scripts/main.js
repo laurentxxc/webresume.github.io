@@ -115,8 +115,11 @@
         return out;
       }
     // Contact & Social
-    const contact = document.getElementById('contact-content'); contact.innerHTML = `<div><strong>Email:</strong> <a href="mailto:${escapeAttr(data.contact.email)}">${escapeHtml(data.contact.email)}</a></div><div><strong>Phone:</strong> ${escapeHtml(data.contact.phone)}</div><div class="muted">${escapeHtml(data.contact.location)}</div>`;
-    const social = document.getElementById('social-content'); social.innerHTML = data.social.map(s=>`<div><img src="${escapeAttr(s.logo)}" alt="${escapeAttr(s.name)} logo" class="social-logo"/> <a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.url)}</a></div>`).join('');
+    const contact = document.getElementById('contact-content');
+    contact.innerHTML = `<div><img src="assets/images/at-the-rate-icon.svg" alt="Email" class="social-logo"/><a href="mailto:${escapeAttr(data.contact.email)}">${escapeHtml(data.contact.email)}</a></div><div><img src="assets/images/phone-call-icon.svg" alt="Phone" class="social-logo"/>${escapeHtml(data.contact.phone)}</div><div class="muted"><img src="assets/images/maps-pin-black-icon.svg" alt="Location" class="social-logo"/>${escapeHtml(data.contact.location)}</div>`;
+    
+    const social = document.getElementById('social-content');
+    social.innerHTML = data.social.map(s=>`<div><img src="${escapeAttr(s.logo)}" alt="${escapeAttr(s.name)} logo" class="social-logo"/> <a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.url)}</a></div>`).join('');
   }
 
   function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); }

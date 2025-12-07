@@ -65,6 +65,8 @@ p{margin:0.5rem 0}
 
 .social-logo{width:20px;height:20px;vertical-align:middle;margin-right:0.5rem;filter:none;transition:filter 200ms ease}
 
+#social-content, #contact-content {display:grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 0.5rem;}
+
 a{color:var(--accent);text-decoration:none;transition:var(--transition)}
 a:hover{text-decoration:underline;opacity:0.8}
 
