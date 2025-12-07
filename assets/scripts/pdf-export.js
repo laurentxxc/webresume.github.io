@@ -163,18 +163,24 @@
           try{
             const ctx = c.getContext('2d');
             const w = c.width, h = c.height;
-            // sample pixels instead of full scan for performance
-            const step = Math.max(1, Math.floor(Math.min(w,h)/20));
+            // sample a reasonable grid for larger canvases
+            const maxSamples = 200; // aim for at most ~200 samples
+            const step = Math.max(1, Math.floor(Math.min(w,h) / Math.sqrt(maxSamples)));
             const data = ctx.getImageData(0,0,w,h).data;
+            let total = 0, nonWhite = 0;
             for(let y=0;y<h;y+=step){
               for(let x=0;x<w;x+=step){
                 const idx = (y*w + x) * 4;
                 const r = data[idx], g = data[idx+1], b = data[idx+2], a = data[idx+3];
-                // consider white-ish if RGB all above 250 and alpha > 0
-                if(a > 10 && (r < 250 || g < 250 || b < 250)) return false;
+                total++;
+                // treat pixel as non-white if RGB below threshold and reasonably opaque
+                if(a > 10 && (r < 245 || g < 245 || b < 245)) nonWhite++;
               }
             }
-            return true;
+            if(total === 0) return true;
+            const ratio = nonWhite / total;
+            // consider blank if fewer than 2% of samples are non-white
+            return ratio < 0.02;
           }catch(e){
             // If we cannot access pixels (CORS), assume not blank to be safe
             return false;
