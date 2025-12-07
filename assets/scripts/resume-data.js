@@ -62,7 +62,7 @@ window.resumeData = {
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
-    social: [{name: "GitHub", url: "https://github.com/laurentxxc"},{name:"LinkedIn",url:"https://www.linkedin.com/in/lxxc"}],
+    social: [{name: "GitHub", logo:"assets/images/logo-github.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin.png", url:"https://www.linkedin.com/in/lxxc"}],
     projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
         - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development) and generate code with AI.",link:"#"}]
@@ -116,7 +116,7 @@ window.resumeData = {
     ],
     skills: {
       "📺 TV Numérique":["DVB Frontend", "DSM-CC", "IPTV", "HW SoC", "Secure boot", "Trusted Execution Engine", "cybersecurity", "Android TV", "RDK-V", "Linux", "CA/DRM"],
-      "♻️ Cycle de Vie du produit": ["Fabrication usine", "Réglementations européennes", "Provisionnement de l'appareil", "Première utilisation", "Refurbishing", "Mise à jour terrain", "Gestion à distance"],
+      "♻️ Cycle de Vie du produit": ["Fabrication usine", "Réglementations européennes", "Provisionnement de l'appareil", "Première utilisation", "Mise à jour terrain", "Gestion à distance"],
       "⚙️ Savoir-Faire logiciel": ["Gestion des spécifications", "Architecture Modulaire", "UML", "Utilisation du code open source", "Feuille de route technologique"],
       "🎁 Gestion de produit":["Support Client", "Réponse d'appel d'offre", "Définition du produit","Feuille de route du produit"],
       "🚦 Gestion de projet" :["Agile", "Scrum", "Kanban board", "Waterfall"],
@@ -124,11 +124,11 @@ window.resumeData = {
       "🛜 Communication réseau": ["TCP/UDP", "IPv4/IPv6", "HTTPS", "DHCP", "RTP/RTSP", "mTLS", "Wi-Fi", "Bluetooth", "TR-069", "MQTT", "XMPP","WireShark"],
       "🕸️ Technologies du Web": ["HTML", "CSS", "Node.js", "Express", "Angular", "MongoDB"],
       "✏️ Languages de programmation": ["Python", "JavaScript", "Java", "C++", "Kotlin", "SwiftfUI", "Rust"],
-      "👤 Savoir-Être": ["Travial en équipe", "Communication", "Adaptabilité", "Résolution de problèmes", "Capacité d'abstraction", "Vue transversale","Curiosité"]
+      "👤 Savoir-Être": ["Travail en équipe", "Communication", "Adaptabilité", "Résolution de problèmes", "Capacité d'abstraction", "Vue transversale","Curiosité"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
-    social: [{name: "GitHub", url: "https://github.com/laurentxxc"},{name:"LinkedIn",url:"https://www.linkedin.com/in/lxxc"}],
+    social: [{name: "GitHub", logo:"assets/images/logo-github.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin.png", url:"https://www.linkedin.com/in/lxxc"}],
     projects: [{title:"WebResume",desc:"Web app pour affiché mon CV. L'application a été créée avec les objectifs suivants :\n\
         - Faire un site web statique pouvant être hébergé gratuitement sur GitHub Pages (HTML/JS/CSS).\n\
         - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development) et générer le code avec l'IA.",
