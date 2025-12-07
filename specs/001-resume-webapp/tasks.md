@@ -116,10 +116,15 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
  - [X] T035 [US3] Create `assets/scripts/pdf-export.js` with PDFExporter class using jsPDF + html2canvas or print-to-PDF API
  - [X] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
  - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
+ - [X] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
+ - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
+ - [ ] T037.1 [US3] Add header/footer support to `assets/scripts/pdf-export.js`: header must include app name, owner, lang and date; footer must display page/total aligned bottom-right
+ - [ ] T037.2 [US3] Implement placeholders for header/footer: `{app}`, `{owner}`, `{lang}`, `{date}`, `{page}`, `{pages}` and allow `headerHeight`/`footerHeight` options
  - [X] T038 [US3] Add print stylesheet optimization in `assets/styles/print.css` (page breaks, margins, hide controls, preserve colors for PDF)
-- [ ] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
-- [ ] T040 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
-- [ ] T041 [US3] Manual QA: PDF opens in Adobe Reader, Google Drive, web browser; content is readable and printable
+ - [ ] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
+ - [ ] T040 [US3] Verify header/footer: header contains app, owner, lang and date centered; footer shows page/total on bottom-right
+ - [ ] T041 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
+ - [ ] T042 [US3] Manual QA: PDF opens in Adobe Reader, Google Drive, web browser; content is readable and printable
 
 **Checkpoint**: US3 complete — PDF export button functional; users can download resume in their preferred language.
 

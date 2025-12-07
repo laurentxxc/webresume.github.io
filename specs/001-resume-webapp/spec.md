@@ -50,6 +50,13 @@ User can export or download a PDF version of the resume via a banner button.
 
 1. **Given** the user is viewing the resume, **When** the user clicks `Export PDF`, **Then** a PDF downloads containing the resume in the active language and with a print-friendly layout.
 
+#### Header & Footer (PDF)
+
+- The exported PDF MUST include a single-line header on every page containing: the application name, the resume owner (firstname + lastname), the active language code (EN/FR) and the export date (YYYY-MM-DD). The header is textual and must be centered in the page header area.
+- The exported PDF MUST include a footer on every page showing the current page number and the total pages (e.g. "1/3") aligned to the bottom-right corner of the page.
+- The PDF exporter SHOULD provide configuration options to customize header/footer text and heights so they can be adapted per-theme or per-export call.
+- If complex HTML markup is required for header/footer (logo, styled blocks), the exporter SHOULD accept an image/dataURI for the header/footer and render it as an image (advanced mode) to ensure faithful visual reproduction.
+
 ---
 
 ### User Story 4 - Theme toggle (Priority: P2)

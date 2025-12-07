@@ -103,15 +103,22 @@
         // render to canvas with white background for readability
         const canvas = await window.html2canvas(node, {scale, useCORS:true, logging:false, backgroundColor:'#ffffff'});
 
-        // prepare PDF document
-        const pdf = new this.jsPDF({unit:'pt',format:format});
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
+        // prepare PDF document and header/footer options
+        const headerText = (typeof options.headerText === 'string') ? options.headerText : options.header || '{app} — {owner} — {lang} — {date}';
+        const footerText = (typeof options.footerText === 'string') ? options.footerText : options.footer || '{page}/{pages}';
+        const headerHeight = (typeof options.headerHeight === 'number') ? options.headerHeight : 28; // pts
+        const footerHeight = (typeof options.footerHeight === 'number') ? options.footerHeight : 20; // pts
+
+        const pdfTmp = new this.jsPDF({unit:'pt',format:format});
+        const pageWidth = pdfTmp.internal.pageSize.getWidth();
+        const pageHeight = pdfTmp.internal.pageSize.getHeight();
 
         // convert page dimensions to canvas pixels
         const pxPerPt = canvas.width / pageWidth;
         const marginPx = Math.round(margin * pxPerPt);
-        const usablePageHeightPx = Math.floor(pageHeight * pxPerPt) - (marginPx * 2);
+        const headerPx = Math.round(headerHeight * pxPerPt);
+        const footerPx = Math.round(footerHeight * pxPerPt);
+        const usablePageHeightPx = Math.floor(pageHeight * pxPerPt) - (marginPx * 2) - headerPx - footerPx;
 
         // Build a list of breakpoints (section bottoms) in canvas pixels to avoid slicing inside a section.
         const nodeRect = node.getBoundingClientRect();
@@ -148,8 +155,9 @@
         breakpoints.sort((a,b)=>a-b);
         for(let i=breakpoints.length-1;i>0;i--){ if(breakpoints[i] === breakpoints[i-1]) breakpoints.splice(i,1); }
 
+        // collect slices first so we can compute total pages for footer
+        const slices = [];
         let position = 0;
-        let pageCount = 0;
         while(position < canvas.height){
           const maxEnd = Math.min(canvas.height, position + usablePageHeightPx);
           // find the nearest breakpoint <= maxEnd and > position
@@ -158,7 +166,6 @@
             const bp = breakpoints[i];
             if(bp > position && bp <= maxEnd){ chosenEnd = bp; break; }
           }
-          // if no suitable breakpoint found, fallback to page bottom (may slice a large section)
           if(chosenEnd === -1){ chosenEnd = Math.min(canvas.height, position + usablePageHeightPx); }
 
           const sliceHeight = Math.max(1, chosenEnd - position);
@@ -172,15 +179,45 @@
           ctx.drawImage(canvas, 0, position, canvas.width, sliceHeight, 0, 0, sliceCanvas.width, sliceCanvas.height);
 
           const imgData = sliceCanvas.toDataURL('image/png');
-          const imgRatio = sliceCanvas.width / sliceCanvas.height;
+          slices.push({imgData, w: sliceCanvas.width, h: sliceCanvas.height});
+          position = chosenEnd;
+        }
+
+        // create PDF and render slices with header/footer
+        const pdf = new this.jsPDF({unit:'pt',format:format});
+        const totalPages = Math.max(1, slices.length);
+        for(let p=0;p<slices.length;p++){
+          const s = slices[p];
+          const imgRatio = s.w / s.h;
           const imgWidth = pageWidth - (margin * 2);
           const imgHeight = imgWidth / imgRatio;
 
-          if(pageCount > 0) pdf.addPage();
-          pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+          if(p > 0) pdf.addPage();
 
-          position = chosenEnd;
-          pageCount++;
+          // header (centered). Fill placeholders: {app},{owner},{lang},{date}
+          if(headerText){
+            const appName = options.appName || document.title || 'WebResume';
+            const hText = String(headerText).replace(/\{app\}/g, appName).replace(/\{owner\}/g, ownerRaw || '').replace(/\{lang\}/g, langCode).replace(/\{date\}/g, dateStr);
+            pdf.setFontSize(10);
+            const textWidth = (pdf.getTextWidth) ? pdf.getTextWidth(hText) : (hText.length * 6);
+            const hx = Math.max(margin, (pageWidth - textWidth) / 2);
+            const hy = margin + 10;
+            try{ pdf.text(hText, hx, hy); }catch(e){ /* ignore */ }
+          }
+
+          // image below header
+          const imgY = margin + headerHeight;
+          try{ pdf.addImage(s.imgData, 'PNG', margin, imgY, imgWidth, imgHeight); }catch(e){ console.warn('addImage failed', e); }
+
+          // footer (right aligned) - replace {page} and {pages}
+          if(footerText){
+            const fText = String(footerText).replace(/\{page\}/g, String(p+1)).replace(/\{pages\}/g, String(totalPages));
+            pdf.setFontSize(10);
+            const fWidth = (pdf.getTextWidth) ? pdf.getTextWidth(fText) : (fText.length * 6);
+            const fx = pageWidth - margin - fWidth;
+            const fy = pageHeight - margin - 6;
+            try{ pdf.text(fText, fx, fy); }catch(e){ /* ignore */ }
+          }
         }
 
         this.status = 'downloading';
