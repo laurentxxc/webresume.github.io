@@ -15,6 +15,8 @@
   function setTheme(t){ prefs.theme = t; savePrefs(); applyTheme(); }
   function toggleTheme(){ setTheme(prefs.theme === 'light' ? 'dark' : 'light') }
 
+  function setHeaderOwner(){const header = document.getElementById('header-title'); if(!header) return; const data = window.resumeData && window.resumeData['owner']; if(!data) return; const owner = window.resumeData['owner']; header.textContent = String(header.textContent).replace(/\{owner\}/g, `${escapeHtml(owner.firstname)} ${escapeHtml(owner.lastname)}`);}
+
   function applyTheme(){ document.documentElement.setAttribute('data-theme', prefs.theme); const btn = document.getElementById('theme-toggle'); if(btn) btn.textContent = prefs.theme === 'dark' ? '☀️' : '🌙' }
   function updateLangButton(){ const b = document.getElementById('lang-toggle'); if(!b) return; b.textContent = prefs.lang === 'en' ? 'Français' : 'English' }
 
@@ -138,7 +140,7 @@
     if(disabled){ btn.setAttribute('aria-busy','true'); } else { btn.removeAttribute('aria-busy'); }
   }
 
-  function init(){ loadPrefs(); applyTheme(); updateLangButton(); wireEvents(); renderResume(); }
+  function init(){ loadPrefs(); setHeaderOwner(); applyTheme(); updateLangButton(); wireEvents(); renderResume(); }
 
   document.addEventListener('DOMContentLoaded', init);
 

@@ -4,7 +4,7 @@ window.resumeData = {
   en: {
     profileImage: "assets/images/en_anim_apple.png",
     sectionTitles: {
-      about: "About Laurent Vincent",
+      about: "About",
       experience: "Experience",
       skills: "Skills",
       education: "Education",
@@ -70,7 +70,7 @@ window.resumeData = {
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
     sectionTitles: {
-      about: "À Propos de Laurent Vincent",
+      about: "À Propos",
       experience: "Expérience",
       skills: "Compétences",
       education: "Formation",
