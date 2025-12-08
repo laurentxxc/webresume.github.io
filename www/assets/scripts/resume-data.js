@@ -66,7 +66,7 @@ window.resumeData = {
     projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
         - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
-        - Generate code with AI.",link:"#"}]
+        - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"}]
   },
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
@@ -134,6 +134,6 @@ window.resumeData = {
         - Faire un site web statique pouvant être hébergé gratuitement sur GitHub Pages (HTML/JS/CSS).\n\
         - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Générer le code avec l'IA.",
-        link:"#"}]
+        link:"https://github.com/laurentxxc/webresume.github.io"}]
   }
 };
