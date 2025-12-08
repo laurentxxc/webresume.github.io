@@ -561,9 +561,9 @@ netlify deploy
 ## Next Steps
 
 1. ✅ Get resume rendering locally
-2. Edit content in `resume-data.js` 
-3. Customize styles in `main.css` and `theme.css`
-4. Test language switching and dark mode
+2. ✅ Edit content in `resume-data.js` 
+3. ✅ Customize styles in `main.css` and `theme.css`
+4. ✅ Test language switching and dark mode
 5. Deploy to hosting platform (GitHub Pages / Vercel / Netlify)
 6. Share your resume link!
 

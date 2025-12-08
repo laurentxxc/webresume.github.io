@@ -118,13 +118,13 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
  - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
  - [X] T036 [US3] Add "Export PDF" button in header; wire to exportPDF() function in main.js
  - [X] T037 [US3] Implement `exportPDF()`: capture resume-content DOM, generate PDF in active language, trigger download with filename `resume-{lang}-{date}.pdf`
- - [ ] T037.1 [US3] Add header/footer support to `assets/scripts/pdf-export.js`: header must include app name, owner, lang and date; footer must display page/total aligned bottom-right
- - [ ] T037.2 [US3] Implement placeholders for header/footer: `{app}`, `{owner}`, `{lang}`, `{date}`, `{page}`, `{pages}` and allow `headerHeight`/`footerHeight` options
+ - [X] T037.1 [US3] Add header/footer support to `assets/scripts/pdf-export.js`: header must include app name, owner, lang and date; footer must display page/total aligned bottom-right
+ - [X] T037.2 [US3] Implement placeholders for header/footer: `{app}`, `{owner}`, `{lang}`, `{date}`, `{page}`, `{pages}` and allow `headerHeight`/`footerHeight` options
  - [X] T038 [US3] Add print stylesheet optimization in `assets/styles/print.css` (page breaks, margins, hide controls, preserve colors for PDF)
- - [ ] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
- - [ ] T040 [US3] Verify header/footer: header contains app, owner, lang and date centered; footer shows page/total on bottom-right
- - [ ] T041 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
- - [ ] T042 [US3] Manual QA: PDF opens in Adobe Reader, Google Drive, web browser; content is readable and printable
+ - [X] T039 [US3] Verify PDF includes: all resume sections, correct language content, theme colors (if applicable), file downloads to user's default location
+ - [X] T040 [US3] Verify header/footer: header contains app, owner, lang and date centered; footer shows page/total on bottom-right
+ - [X] T041 [US3] Test PDF export: generate PDF in FR, verify French content; generate in EN, verify English content
+ - [X] T042 [US3] Manual QA: PDF opens in Adobe Reader, Google Drive, web browser; content is readable and printable
 
 **Checkpoint**: US3 complete — PDF export button functional; users can download resume in their preferred language.
 
@@ -171,10 +171,10 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T054 [P] [US5] Add Projects section template in `index.html` with cards layout (grid or flex)
-- [ ] T055 [P] [US5] Add projects data to `resume-data.js` (FR and EN): title, description, link, tags, optional screenshot
-- [ ] T056 [US5] Create project card component rendering: title, description, tags, link button, optional image
-- [ ] T057 [US5] Update `renderResume()` to include Projects section rendering from resumeData[activeLanguage].projects
+- [X] T054 [P] [US5] Add Projects section template in `index.html` with cards layout (grid or flex)
+- [X] T055 [P] [US5] Add projects data to `resume-data.js` (FR and EN): title, description, link, tags, optional screenshot
+- [X] T056 [US5] Create project card component rendering: title, description, tags, link button, optional image
+- [X] T057 [US5] Update `renderResume()` to include Projects section rendering from resumeData[activeLanguage].projects
 - [ ] T058 [US5] Add project screenshot images to `assets/images/projects/` and optimize (WebP + JPEG fallback, max 500KB each)
 - [ ] T059 [US5] Verify project links open in new tab (`target="_blank"`, `rel="noopener noreferrer"`)
 - [ ] T060 [US5] Test bilingual projects: add sample projects in FR and EN; toggle language and verify project content updates
@@ -194,8 +194,8 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 - [X] T065 [P] Create `README.md` with setup instructions, customization guide, deployment steps for GitHub Pages / Vercel / Netlify
 - [X] T066 [P] Add `.gitignore`: node_modules/, dist/, build artifacts, local config (if needed)
 - [ ] T067 Create GitHub Actions workflow (optional) for lighthouse CI, link checker, accessibility audit
- - [ ] T068 Test on real devices: iPhone 12/14, Android phone, tablet (iPad); test on slow network (3G simulation)
- - [X] T069 Create sample resume data in both languages (`resume-data.js` template with placeholder content)
+- [ ] T068 Test on real devices: iPhone 12/14, Android phone, tablet (iPad); test on slow network (3G simulation)
+- [X] T069 Create sample resume data in both languages (`resume-data.js` template with placeholder content)
 - [ ] T070 Update `package.json` (if using build tool) with dev dependencies: jsPDF, html2canvas, jest, axe-core
 - [ ] T071 Document code: JSDoc comments on main functions, README sections for data model, customization
 - [ ] T072 Final QA: smoke test all 5 user stories; language toggle, theme toggle, PDF export all functional
