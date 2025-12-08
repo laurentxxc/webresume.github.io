@@ -199,7 +199,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 - [ ] T070 Update `package.json` (if using build tool) with dev dependencies: jsPDF, html2canvas, jest, axe-core
 - [ ] T071 Document code: JSDoc comments on main functions, README sections for data model, customization
 - [ ] T072 Final QA: smoke test all 5 user stories; language toggle, theme toggle, PDF export all functional
-- [ ] T073 Create deployment guide: GitHub Pages setup, Vercel/Netlify one-click deploy, custom domain instructions
+ - [X] T073 Create deployment guide: GitHub Pages setup, Vercel/Netlify one-click deploy, custom domain instructions (`DEPLOYMENT.md`)
 
 ---
 
