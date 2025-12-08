@@ -53,21 +53,22 @@ specs/[###-feature]/
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
-### Source Code (repository root)
+### Source Code (static site)
 
 ```text
 webresume/
-├── index.html                    # Main resume page (semantic HTML)
-├── assets/
-│   ├── styles/
-│   │   ├── main.css              # Core styles
-│   │   ├── theme.css             # Dark/Light mode CSS variables
-│   │   └── print.css             # PDF-optimized print styles
-│   ├── scripts/
-│   │   ├── main.js               # Core app (language, theme, PDF export)
-│   │   ├── resume-data.js        # Embedded resume content (FR/EN)
-│   │   └── pdf-export.js         # Client-side PDF generation
-│   └── images/                   # Photos, logos, icons (optimized)
+├── www/
+│   ├── index.html                # Main resume page (semantic HTML)
+│   └── assets/
+│       ├── styles/
+│       │   ├── main.css          # Core styles
+│       │   ├── theme.css         # Dark/Light mode CSS variables
+│       │   └── print.css         # PDF-optimized print styles
+│       ├── scripts/
+│       │   ├── main.js           # Core app (language, theme, PDF export)
+│       │   ├── resume-data.js    # Embedded resume content (FR/EN)
+│       │   └── pdf-export.js     # Client-side PDF generation
+│       └── images/               # Photos, logos, icons (optimized)
 ├── [BUILD_TOOL_OPTIONAL]/        # Build config (vite.config.js, _config.yml, angular.json)
 ├── public/                       # Static assets (if using build tool)
 └── dist/                         # Build output (generated)
@@ -75,7 +76,7 @@ webresume/
 
 **Structure Decision**: 
 - Deployed as **single static page** (Option 1 + web conventions).
-- **Resume data** (FR/EN content) stored in `assets/scripts/resume-data.js` as JavaScript object literals or baked into `index.html` template; **NO external JSON/YAML files** per user constraint.
+- **Resume data** (FR/EN content) stored in `www/assets/scripts/resume-data.js` as JavaScript object literals or baked into the `www/index.html` template; **NO external JSON/YAML files** per user constraint.
 - **Build tool optional**: Project is viable as pure HTML/CSS/JS; Vite/Jekyll/Angular configs provided for optional automation.
 - **Assets organized**: Styles, scripts, images in logical `assets/` subdirs for clarity and easy customization.
 

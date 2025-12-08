@@ -18,8 +18,9 @@ Le guide suppose que votre site est une application statique (sans étape de bui
 
 ## 1) Déploiement sur GitHub Pages (méthode simple)
 
-Option A — Déploiement depuis la branche `main` (root)
-1. Assurez-vous que votre site est prêt et que l'index HTML se trouve à la racine du dépôt.
+Option A — Déploiement depuis la branche `main` (utiliser `/docs` ou renommer `www/`)
+1. Assurez-vous que votre site est prêt et que l'index HTML se trouve dans `www/` (fichier `www/index.html`).
+  Si vous préférez que GitHub Pages serve directement depuis `main`, renommez `www/` en `docs/` (GitHub Pages autorise `/` ou `/docs` pour la branche configurée).
 2. Poussez vos modifications sur `main` :
 
 ```bash
@@ -29,7 +30,7 @@ git push origin main
 ```
 
 3. Ouvrez votre dépôt sur GitHub → `Settings` → `Pages` (section 'Pages' ou `Settings -> Pages`).
-4. Dans "Source" choisissez `Branch: main` et `Folder: / (root)` puis cliquez sur `Save`.
+4. Dans "Source" choisissez `Branch: main` et `Folder: /docs` (si vous avez renommé `www/` en `docs/`) puis cliquez sur `Save`.
 5. Après quelques minutes, GitHub Pages publiera le site à l'URL : `https://<votre-utilisateur>.github.io/<repo>/` ou, si vous utilisez un repo `user.github.io`, à `https://<votre-utilisateur>.github.io/`.
 
 Notes :
@@ -37,14 +38,17 @@ Notes :
 - Pour forcer l'utilisation d'une branche dédiée (ex: `gh-pages`), utilisez `git subtree` ou le module `gh-pages` (npm) — utile si vous générez un `dist/` via un build step.
 
 Option B — Branch `gh-pages` (si vous avez un build step)
-- Générez vos fichiers statiques dans `dist/` puis utilisez une commande de déploiement (ex. `gh-pages`):
+- Si vous préférez laisser votre site sous `www/`, publiez le contenu de `www/` vers la branche `gh-pages` (option sans renommer en `docs/`). Exemple :
 
 ```bash
-npm run build           # si vous avez un script build
-npx gh-pages -d dist
+# Publier le répertoire www/ sur gh-pages (option 1 : git subtree)
+git subtree push --prefix www origin gh-pages
+
+# Ou (option 2) avec gh-pages npm :
+npx gh-pages -d www
 ```
 
-Ce workflow crée/pousse la branche `gh-pages` automatiquement.
+Ces commandes publient uniquement le contenu du dossier `www/` sur la branche `gh-pages` utilisée par GitHub Pages.
 
 ---
 
@@ -97,7 +101,12 @@ git push origin v1.0.0
 - (Optionnel) Archiver une release (zip) :
 
 ```bash
-git archive --format=zip --output=webresume-v1.0.0.zip HEAD
+# Si vous souhaitez archiver uniquement le site statique placé dans `www/` :
+git archive --format=zip --output=webresume-v1.0.0.zip HEAD:www
+
+# Ou, si `www/` n'est pas disponible via git archive, zip le dossier localement :
+# (requiert `zip`)
+#(cd www && zip -r ../webresume-v1.0.0.zip .)
 ```
 
 ---

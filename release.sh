@@ -77,9 +77,26 @@ echo "Pushing branch and tag to origin"
 git push origin HEAD
 git push origin "$VERSION"
 
-# create zip archive
+# create zip archive (prefer packaging the `www/` static site if present)
 ARCHIVE="webresume-${VERSION}.zip"
-git archive --format=zip --output="$ARCHIVE" HEAD
+if [ -d "www" ]; then
+  echo "Detected 'www/' directory — packaging site contents only"
+  # If www/ is tracked in git we can use git archive to export only that subtree
+  if git ls-tree -r --name-only HEAD | grep -q '^www/'; then
+    git archive --format=zip --output="$ARCHIVE" HEAD:www
+  else
+    # Fallback to filesystem zip (requires `zip` installed)
+    if command -v zip >/dev/null 2>&1; then
+      (cd www && zip -r "../$ARCHIVE" .)
+    else
+      echo "zip command not found; falling back to archiving full repo"
+      git archive --format=zip --output="$ARCHIVE" HEAD
+    fi
+  fi
+else
+  echo "No www/ directory found — packaging full repository"
+  git archive --format=zip --output="$ARCHIVE" HEAD
+fi
 echo "Created archive: $ARCHIVE"
 
 # attempt to create GitHub release if gh CLI available

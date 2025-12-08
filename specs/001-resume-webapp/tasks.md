@@ -17,7 +17,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 **Purpose**: Project structure and baseline configuration
 
- - [X] T001 Create project directory structure: `index.html`, `assets/{styles,scripts,images}/`, build config stubs
+ - [X] T001 Create project directory structure: `www/index.html`, `www/assets/{styles,scripts,images}/`, build config stubs
  - [X] T002 [P] Initialize git repository with `.gitignore` (node_modules, dist/, build artifacts)
  - [X] T003 [P] Create `assets/styles/theme.css` with CSS custom properties for light/dark mode
  - [X] T004 [P] Create `assets/styles/print.css` for PDF-friendly printing
@@ -31,7 +31,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
  - [X] T005 [P] Create `assets/scripts/resume-data.js` with bilingual data structure (French & English)
- - [X] T006 [P] Create `index.html` with semantic HTML structure (header, nav, main, sections, footer)
+ - [X] T006 [P] Create `www/index.html` with semantic HTML structure (header, nav, main, sections, footer)
  - [X] T007 Create `assets/scripts/main.js` with app initialization and event setup
  - [X] T008 [P] Create `assets/styles/main.css` with base styles, layout, responsive grid
  - [X] T009 Implement localStorage manager in `assets/scripts/main.js` for language/theme persistence
@@ -57,7 +57,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 1
 
- - [X] T014 [P] [US1] Create About section template in `index.html` with profile text and optional photo in `assets/images/`
+ - [X] T014 [P] [US1] Create About section template in `www/index.html` with profile text and optional photo in `www/assets/images/`
  - [X] T014.1 [US1] Add profile photo to About section: display on left (25% max width), responsive stacking on mobile
  - [X] T015 [P] [US1] Create Experience section template with job entries (company, role, dates, description, bullets)
  - [X] T016 [P] [US1] Create Skills section template with skill cards (name, category, level)
@@ -171,7 +171,7 @@ description: "Task list for Resume Web App (001-resume-webapp) implementation"
 
 ### Implementation for User Story 5
 
-- [X] T054 [P] [US5] Add Projects section template in `index.html` with cards layout (grid or flex)
+ - [X] T054 [P] [US5] Add Projects section template in `www/index.html` with cards layout (grid or flex)
 - [X] T055 [P] [US5] Add projects data to `resume-data.js` (FR and EN): title, description, link, tags, optional screenshot
 - [X] T056 [US5] Create project card component rendering: title, description, tags, link button, optional image
 - [X] T057 [US5] Update `renderResume()` to include Projects section rendering from resumeData[activeLanguage].projects

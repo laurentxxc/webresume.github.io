@@ -20,7 +20,7 @@ cd webresume
 mkdir -p assets/{styles,scripts,images}
 ```
 
-#### 1.2 Create `index.html`
+#### 1.2 Create `www/index.html`
 
 ```html
 <!DOCTYPE html>
@@ -455,12 +455,12 @@ footer {
 #### 1.7 Open in Browser
 
 ```bash
-# Open index.html in your browser (e.g., Chrome, Firefox)
-open index.html  # macOS
+# Open the site entry `www/index.html` in your browser (e.g., Chrome, Firefox)
+open www/index.html  # macOS
 # or
-start index.html  # Windows
+start www/index.html  # Windows
 # or
-xdg-open index.html  # Linux
+xdg-open www/index.html  # Linux
 ```
 
 ✅ **Done!** Refresh the page and test language/theme switching.
@@ -518,7 +518,7 @@ npm start  # http://localhost:4200
 ### Add Your Content
 
 1. Edit `assets/scripts/resume-data.js` with your actual resume data.
-2. Update `index.html` with your name and title.
+2. Update `www/index.html` with your name and title.
 3. Add your photo to `assets/images/`.
 4. Customize colors in `assets/styles/theme.css`.
 
