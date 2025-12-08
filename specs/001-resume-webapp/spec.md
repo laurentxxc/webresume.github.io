@@ -18,8 +18,8 @@ An end user visits the site and reads the resume content.
 
 **Acceptance Scenarios**:
 
-1. **Given** the site is loaded, **When** the user visits the page, **Then** the page displays About, Work Experience, Skills, Education, Contact and Social links.
-2. **Given** mobile viewport, **When** the user loads the page, **Then** layout adapts and remains readable.
+1. **Given** the site is loaded, **When** the user visits the page, **Then** the page displays About (with optional profile photo), Work Experience, Skills, Education, Contact and Social links.
+2. **Given** mobile viewport, **When** the user loads the page, **Then** layout adapts and remains readable (profile photo stacks above text on small screens).
 
 ---
 
@@ -33,8 +33,8 @@ User can switch between French and English to read the resume copy.
 
 **Acceptance Scenarios**:
 
-1. **Given** the page is visible, **When** the user selects `Français`, **Then** all resume content updates to French.
-2. **Given** the page is visible, **When** the user selects `English`, **Then** all resume content updates to English.
+1. **Given** the page is visible, **When** the user selects `Français`, **Then** all resume content (including section titles: About→À Propos, Experience→Expérience, etc.) updates to French.
+2. **Given** the page is visible, **When** the user selects `English`, **Then** all resume content (including section titles) updates to English.
 
 ---
 
@@ -49,6 +49,13 @@ User can export or download a PDF version of the resume via a banner button.
 **Acceptance Scenarios**:
 
 1. **Given** the user is viewing the resume, **When** the user clicks `Export PDF`, **Then** a PDF downloads containing the resume in the active language and with a print-friendly layout.
+
+#### Header & Footer (PDF)
+
+- The exported PDF MUST include a single-line header on every page containing: the application name, the resume owner (firstname + lastname), the active language code (EN/FR) and the export date (YYYY-MM-DD). The header is textual and must be centered in the page header area.
+- The exported PDF MUST include a footer on every page showing the current page number and the total pages (e.g. "1/3") aligned to the bottom-right corner of the page.
+- The PDF exporter SHOULD provide configuration options to customize header/footer text and heights so they can be adapted per-theme or per-export call.
+- If complex HTML markup is required for header/footer (logo, styled blocks), the exporter SHOULD accept an image/dataURI for the header/footer and render it as an image (advanced mode) to ensure faithful visual reproduction.
 
 ---
 
@@ -91,7 +98,7 @@ The site includes a Projects section to present web app projects and games.
 
 ### Functional Requirements
 
-- **FR-001**: The site MUST display the standard resume sections: About, Work Experience, Skills, Education, Contact, Social Links.
+- **FR-001**: The site MUST display the standard resume sections: About (with optional profile photo displayed on the left, max 25% width), Work Experience, Skills (organized by category), Education, Contact, Social Links.
 - **FR-002**: The site MUST provide a language switcher for French and English; switching changes all textual content.
 - **FR-003**: The site MUST provide an `Export PDF` control which produces a downloadable/printable PDF of the resume in the active language.
 - **FR-004**: The site MUST provide a theme toggle (Dark/Light) that updates the visual presentation persistently during the session.
@@ -101,11 +108,12 @@ The site includes a Projects section to present web app projects and games.
 
 ### Key Entities *(include if feature involves data)*
 
-- **Resume**: Logical document composed of Sections.
+- **Resume**: Logical document composed of Sections, optionally including a profile photo.
 - **Section**: e.g., About, Experience, Skills, Education, Contact, Projects.
+- **About**: Introduction section with optional profile photo (left-aligned, max 25% width) and biography text.
 - **Experience**: Employer, role, start/end dates, summary, bullets.
 - **Education**: Institution, degree, dates, notes.
-- **Skill**: Name, level/category, optional tags.
+- **Skill**: Organized by category (e.g., Languages, Tools, Methodologies). Each skill has a name and optional level/tag.
 - **Contact**: Email, optional contact form metadata (if present).
 - **Project**: Title, short description, optional link, screenshots.
 

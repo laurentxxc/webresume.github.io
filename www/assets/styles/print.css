@@ -1,0 +1,11 @@
+/* Hide interactive controls when printing */
+.controls{display:none}
+
+/* Ensure readable print font and sizing */
+body{font-size:12pt}
+
+/* Page breaks for sections */
+.section{page-break-inside:avoid}
+
+/* Remove background colors for better printing on some printers */
+*{background:transparent !important;color:#000 !important}
