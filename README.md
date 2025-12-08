@@ -14,4 +14,7 @@ Files of interest:
  - `www/assets/styles/` — `main.css`, `theme.css`, `print.css`
  - `www/assets/scripts/` — `resume-data.js`, `main.js`, `pdf-export.js`
 
-License: Public domain (replace as needed)
+
+Files hosted by [Vercel](https://vercel.com) at https://webresume-lxxc.vercel.app
+
+License: MIT
