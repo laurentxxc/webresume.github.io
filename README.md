@@ -2,7 +2,7 @@
 
 This is a minimal, vanilla HTML/CSS/JS resume web app 🎉.
 
-This app has been done using [spec-kit](https://github.com/github/spec-kit). Main idea being creation of this app was to use AI as much as possible. Only few manual changes/tweaks have been done on the generated code.
+This app has been done using [spec-kit](https://github.com/github/spec-kit). Main idea behind creation of this app was to use AI as much as possible. Only few manual changes/tweaks have been done on the generated code.
 
 Main features of this web app are:
 - Static presentation of resume data that can be hosted freely on github pages or [Vercel](https://vercel.com).
