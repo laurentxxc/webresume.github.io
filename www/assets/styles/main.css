@@ -65,7 +65,8 @@ p{margin:0.5rem 0}
 
 .social-logo{width:20px;height:20px;vertical-align:middle;margin-right:0.5rem;filter:none;transition:filter 200ms ease}
 
-#social-content, #contact-content {display:grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 0.5rem;}
+.contact-wrapper {display: flex; flex-direction: row; align-items: flex-start; flex-wrap:wrap; gap:1.5rem; margin-top: 0.5rem;}
+#social-content, #contact-content {display:flex; flex-direction: column; gap:0.5rem; margin-top: 2rem;}
 
 a{color:var(--accent);text-decoration:none;transition:var(--transition)}
 a:hover{text-decoration:underline;opacity:0.8}
@@ -84,3 +85,14 @@ li{margin:0.25rem 0}
 
 /* In dark mode, invert social logos (useful for black PNG icons) */
 [data-theme="dark"] .social-logo{filter:invert(100%)}
+
+/* CSS for QR code */
+.qrcode-image {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+
+[data-theme="dark"] .qrcode-image {
+  filter: invert(100%);
+}
