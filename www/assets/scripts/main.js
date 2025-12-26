@@ -120,6 +120,13 @@
     
     const social = document.getElementById('social-content');
     social.innerHTML = data.social.map(s=>`<div><img src="${escapeAttr(s.logo)}" alt="${escapeAttr(s.name)} logo" class="social-logo"/> <a href="${escapeAttr(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.url)}</a></div>`).join('');
+
+    // QR Code
+    const qrcodeDiv = document.getElementById('qrcode');
+    if (qrcodeDiv && data.qrcode) {
+      qrcodeDiv.innerHTML = `<img src="${escapeAttr(data.qrcode)}" alt="Laurent's vCard" class="qrcode-image" />`;
+    }
+
   }
 
   function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); }
