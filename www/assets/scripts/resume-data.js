@@ -61,7 +61,7 @@ window.resumeData = {
       "👤 Soft Skills": ["Teamwork", "Communication", "Adaptability", "Problem Solving", "Abstract thinking", "Cross-function","Curiosity"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "M.Sc. Computer Science", year: "1997"}],
-    contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
+    contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères (Île-de-France), France", map_link: "https://maps.app.goo.gl/hFgziqW14yTdynGs5"},
     social: [{name: "GitHub", logo:"assets/images/github-icon.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin-square-icon.png", url:"https://www.linkedin.com/in/lxxc"}],
     qrcode: "assets/images/vcard_lxxc_black.png",
     projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
@@ -129,7 +129,7 @@ window.resumeData = {
       "👤 Savoir-Être": ["Travail en équipe", "Communication", "Adaptabilité", "Résolution de problèmes", "Capacité d'abstraction", "Vue transversale","Curiosité"]
     },
     education: [{school: "[INSA Rennes](https://www.insa-rennes.fr)", degree: "Ingénieur Informatique", year: "1997"}],
-    contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères, France"},
+    contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères (Île-de-France), France", map_link: "https://maps.app.goo.gl/hFgziqW14yTdynGs5"},
     social: [{name: "GitHub", logo:"assets/images/github-icon.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin-square-icon.png", url:"https://www.linkedin.com/in/lxxc"}],
     qrcode: "assets/images/vcard_lxxc_black.png",
     projects: [{title:"WebResume",desc:"Web app pour afficher mon CV. L'application a été créée avec les objectifs suivants :\n\
