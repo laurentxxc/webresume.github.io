@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.0 - 2025-12-29
+
+- Merge pull request #5 (e023888)
+- favicon added (a0006b7)
+- map_link added for location allowing hyperlink on location. Hyperlink also added for phone number. (c7614d7)
+
+# Changelog
+
 ## v1.1.0 - 2025-12-26
 
 - Merge pull request #4 from laurentxxc:001-resume-webapp-qrcode (e29c47d)
