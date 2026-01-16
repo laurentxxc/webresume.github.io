@@ -13,3 +13,4 @@ yarn-error.log*
 /.parcel-cache
 /.cache
 /*.log
+/*.zip
