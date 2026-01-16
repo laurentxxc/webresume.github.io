@@ -57,6 +57,7 @@ p{margin:0.5rem 0}
 .skill-items{display:flex;flex-wrap:wrap;gap:0.25rem}
 
 .profile-photo{width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid var(--accent)}
+.project-image{width:96px;height:96px;object-fit:contain;padding:5px;float:left;margin-right:0.75rem}
 
 .about-wrapper{display:flex;gap:1.5rem;align-items:flex-start}
 .about-photo{flex-shrink:0;width:25%;max-width:150px;}
