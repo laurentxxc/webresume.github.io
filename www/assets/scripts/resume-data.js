@@ -67,7 +67,10 @@ window.resumeData = {
     projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
         - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
-        - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"}]
+        - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"},
+      {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple tile matching game made with Flutter/Dart.\n\
+        I have made this app to understand how efficient Flutter/Dart is for developing multi-platform applications.\n\
+        Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app"}]
   },
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
@@ -136,6 +139,9 @@ window.resumeData = {
         - Faire un site web statique pouvant être hébergé gratuitement sur GitHub Pages (HTML/JS/CSS).\n\
         - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Générer le code avec l'IA.",
-        link:"https://github.com/laurentxxc/webresume.github.io"}]
+        link:"https://github.com/laurentxxc/webresume.github.io"},
+      {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple jeu de correspondance de tuiles réalisé avec Flutter/Dart.\n\
+        J'ai créé cette application pour comprendre l'efficacité de Flutter/Dart dans le développement d'applications multi-plateformes.\n\
+        À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app"}]
   }
 };
