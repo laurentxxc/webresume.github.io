@@ -70,7 +70,7 @@ window.resumeData = {
         - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"},
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple tile matching game made with Flutter/Dart.\n\
         I have made this app to understand how efficient Flutter/Dart is for developing multi-platform applications.\n\
-        Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app"}]
+        Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"}]
   },
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
@@ -142,6 +142,6 @@ window.resumeData = {
         link:"https://github.com/laurentxxc/webresume.github.io"},
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple jeu de correspondance de tuiles réalisé avec Flutter/Dart.\n\
         J'ai créé cette application pour comprendre l'efficacité de Flutter/Dart dans le développement d'applications multi-plateformes.\n\
-        À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app"}]
+        À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"}]
   }
 };

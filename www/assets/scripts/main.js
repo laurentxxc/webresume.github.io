@@ -52,7 +52,7 @@
     // Education
     const edu = document.getElementById('education-content'); edu.innerHTML = data.education.map(d=>`<div><strong>${escapeHtml(d.degree)}</strong> — ${renderMarkdownInline(d.school)} <span class="muted">(${escapeHtml(d.year)})</span></div>`).join('');
     // Projects
-      const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4>${renderMarkdown(p.desc)}<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
+      const proj = document.getElementById('projects-content'); proj.innerHTML = data.projects.map(p=>`<div class="project-card"><h4>${escapeHtml(p.title)}</h4>${p.img ? `<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer"><img src="${escapeAttr(p.img)}" alt="${escapeAttr(p.title)} project image" class="project-image"></a>`: ''}${renderMarkdown(p.desc)}<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener noreferrer">Visit</a></div>`).join('');
       // Markdown renderer: supports **bold**, *italic*, `code`, [link](url), and - lists
       function processInline(text){
         // Escape HTML first
