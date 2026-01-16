@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0 - 2026-01-16
+
+- Merge pull request #6 from laurentxxc/feature/new-project (f1dab91)
+- support of small picture for project. Add one for triplex (46aef05)
+- data for triplex project added (7223af3)
+- removing .zip release file from version control (19bff43)
+
+# Changelog
+
 ## v1.2.0 - 2025-12-29
 
 - Merge pull request #5 (e023888)
