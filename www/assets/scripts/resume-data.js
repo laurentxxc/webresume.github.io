@@ -86,14 +86,14 @@ window.resumeData = {
     about: "Salutations🖖, je me prénomme **Laurent**.\n\Expert en ingénierie des systèmes et architecture logicielle avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
-      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Ingénieur Systèmes Distingué / Responsable Ligne Produits Vidéo", dates: "2024 - Présent", 
+      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Architecte Produit Android TV", dates: "2024 - Présent", 
         description: "En tant que membre d'une équipe internationale de Responsables Ligne Produits, j'ai été chargé de la définition de nouveaux produits [boîtiers numériques (STB)](https://en.wikipedia.org/wiki/Set-top_box) autour de la plateforme [Android TV](https://www.android.com/tv/). En particulier, j'ai :\n\
         - Piloté la définition de POCs Android TV (ex. Subatomic) grâce à une collaboration étroite avec [Google](https://www.google.com/) concernant la nouvelle feuille de route des fonctionnalités Android TV.\n\
         - Assuré que les politiques Google (y compris les mises à jour et les correctifs de sécurité) sont correctement implémentées dans les produits déployés (>12M d'unités actives).\n\
         - Maintenu la base de données des exigences Android TV ([Jira](https://www.atlassian.com/software/jira)) à travers les lignes de produits (CPU [Broadcom](https://www.broadcom.com/), [Amlogic](https://www.amlogic.com/) ou Synaptic).\n\
         - Coordonné le support de migration Android TV avec les équipes commerciales et de développement."},
 
-      {company: "[CommScope](https://www.commscope.com/) / [Arris](https://en.wikipedia.org/wiki/Arris_International)", role: "Ingénieur Systèmes Distingué", dates: "2016 - 2024", 
+      {company: "[CommScope](https://www.commscope.com/) / [Arris](https://en.wikipedia.org/wiki/Arris_International)", role: "Expert Systèmes Embarqués", dates: "2016 - 2024", 
         description: "En tant que membre d'une équipe internationale d'Ingénieurs Systèmes, j'ai été responsable de la spécification technique de divers produits Boîtiers Numériques. En particulier, j'ai :\n\
         - Défini les exigences techniques logicielles pour de nombreux modèles de boîtiers [Android TV](https://www.android.com/tv/) [Broadcom](https://www.broadcom.com/) UHD/4K pour opérateurs (incl. [Orange TV Box](https://www.androidtv-guide.com/pay-tv-provider/orange-belgium/), [Telenor Sweden Mediahubb](https://www.androidtv-guide.com/pay-tv-provider/telenor-mediahubb/), [SK Broadband B TV Smart 2](https://www.androidtv-guide.com/pay-tv-provider/sk-broadband-b-tv-smart-2-arris/)).\n\
         - Défini les exigences techniques logicielles pour des modèles de boîtiers [OpenTV 5](https://nagra.vision/streaming-solutions/opentv/) UHD/4K pour opérateurs (incl. Telefonica Proteus).\n\
