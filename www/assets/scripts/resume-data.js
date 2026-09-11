@@ -14,13 +14,21 @@ window.resumeData = {
     },
     about: "Hi👋, my name is **Laurent**.\n\Expert in systems engineering and software architecture with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
     experience: [
-      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - Present", 
+      {company:"", role:"⚙️ Independent Software Development \& Technology Exploration 🧠",dates:"2026 - Today",
+        description: "After 25+ years in embedded software, I am deliberately expanding my technical scope beyond Digital TV, using this transition period to learn modern software technologies and build practical applications, increasingly using AI-assisted development. This includes:\n\
+        - Developing personal software projects using Python, Swift/SwiftUI, web technologies and AI-assisted development workflows.\n\
+        - Exploring modern software technologies through hands-on projects and continuous learning.\n\
+        - Using LLMs as an engineering assistant for software design, implementation, debugging, documentation and technical research.\n\
+        - Designing and implementing applications from initial concept through development, testing and deployment.\n\
+        - Publishing selected projects and experiments on [my GitHub](https://github.com/laurentxxc)."
+      },
+
+      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - 2026", 
         description: "As part of an international team of product line managers, I was focus on the definition of new [set-top boxes (STB)](https://en.wikipedia.org/wiki/Set-top_box) products around [Android TV](https://www.android.com/tv/) platform. In particular, I have:\n\
         - Led definition of Android TV POCs (e.g. Subatomic) thanks to closed relationship with Google regarding new Android feature roadmap.\n\
         - Ensured Google policies (inc. Letter upgrade and Security patch) are properly implemented across deployed products (>12M active units).\n\
         - Maintained Android TV requirements database ([Jira](https://www.atlassian.com/software/jira)) across product lines ([Broadcom](https://www.broadcom.com/), [Amlogic](https://www.amlogic.com/) or [Synaptics](https://www.synaptics.com) CPU based).\n\
         - Coordinated Android TV migration support with commercial and development teams."},
-
 
       {company: "[CommScope](https://www.commscope.com/) / [Arris](https://en.wikipedia.org/wiki/Arris_International)", role: "Distinguished Systems Engineer", dates: "2016 - 2024", 
         description: "As part of an international team of systems engineers, I was responsible of technical specification of various STB products. In particular, I have:\n\
@@ -64,13 +72,26 @@ window.resumeData = {
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères (Île-de-France), France", map_link: "https://maps.app.goo.gl/hFgziqW14yTdynGs5"},
     social: [{name: "GitHub", logo:"assets/images/github-icon.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin-square-icon.png", url:"https://www.linkedin.com/in/lxxc"}],
     qrcode: "assets/images/vcard_lxxc_black.png",
-    projects: [{title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
+    projects: [
+      {title:"WebResume",desc:"Simple Web app for displaying my resume. This app has been done with main following goals in mind:\n\
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
         - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"},
+      
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple tile matching game made with Flutter/Dart.\n\
         I have made this app to understand how efficient Flutter/Dart is for developing multi-platform applications.\n\
-        Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"}]
+        Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"},
+      
+      {title:"MailJobScanner",desc:"Python tool that scans job-alert emails from Apple Mail (AppleScript) or Gmail (IMAP), extracts job proposals with a local LLM, analyzes them against my resume and expectations, and scores each match Low/Medium/High.\n\
+        Results are browsable in a [Streamlit](https://streamlit.io) dashboard and everything runs locally and privately via [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai).",link:"https://github.com/laurentxxc/MailJobScanner", img:"assets/images/dashboard_screenshot_jobList_small.png"},
+      
+      {title:"R4J Tools",desc:"Python toolbox to export, format and publish R4J requirements in multiple publication formats:\n\
+        - Export requirements from a JIRA database into YAML.\n\
+        - Reorganize them into a structured document with [Jinja](https://jinja.palletsprojects.com) templates.\n\
+        - Render the final MS Word report via [Pandoc](https://pandoc.org).",link:"https://github.com/laurentxxc/r4jtools", img:"assets/images/r4jtools_workflow.png"},
+      
+      {title:"Triplex (SwiftUI)",desc:"Native puzzle game for iOS/iPadOS/macOS written in SwiftUI where you match sets of 3 tiles sharing all criteria or differing on all 4 attributes.\n\
+        Built to evaluate the Xcode/SwiftUI developer experience; archived after being ported to a [Flutter multi-platform version](https://github.com/laurentxxc/flutter_triplex).",link:"https://github.com/laurentxxc/swiftui_triplex", img:"assets/images/triplex_switfui.png"}]
   },
   fr: {
     profileImage: "assets/images/fr_anim_apple.png",
@@ -86,7 +107,15 @@ window.resumeData = {
     about: "Salutations🖖, je me prénomme **Laurent**.\n\Expert en ingénierie des systèmes et architecture logicielle avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
-      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Architecte Produit Android TV", dates: "2024 - Présent", 
+      {company: "", role:"⚙️ Développement Logiciel Indépendant \& Exploration Technologique 🧠", date: "2026 –- Présent",
+        description: "Après plus de 25 ans en logiciel embarqué, j'élargis délibérément mon champ technique au-delà de la TV numérique, utilisant cette période de transition pour apprendre les technologies logicielles modernes et concevoir des applications pratiques, en recourant de plus en plus au développement assisté par IA. Cela comprend :\n\
+        - Développement de projets logiciels personnels en Python, Swift/SwiftUI, technologies web et workflows de développement assisté par IA.\n\
+        - Exploration de technologies logicielles modernes à travers des projets pratiques et une formation continue.\n\
+        - Utilisation de LLMs comme assistant d'ingénierie pour la conception, l'implémentation, le débogage, la documentation et la recherche technique.\n\
+        - Conception et implémentation d'applications depuis le concept initial jusqu'au développement, aux tests et au déploiement.\n\
+        - Publication de projets et d'expériences sélectionnés sur [mon GitHub](https://github.com/laurentxxc)."},
+
+      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Architecte Produit Android TV", dates: "2024 - 2026", 
         description: "En tant que membre d'une équipe internationale de Responsables Ligne Produits, j'ai été chargé de la définition de nouveaux produits [boîtiers numériques (STB)](https://en.wikipedia.org/wiki/Set-top_box) autour de la plateforme [Android TV](https://www.android.com/tv/). En particulier, j'ai :\n\
         - Piloté la définition de POCs Android TV (ex. Subatomic) grâce à une collaboration étroite avec [Google](https://www.google.com/) concernant la nouvelle feuille de route des fonctionnalités Android TV.\n\
         - Assuré que les politiques Google (y compris les mises à jour et les correctifs de sécurité) sont correctement implémentées dans les produits déployés (>12M d'unités actives).\n\
@@ -135,13 +164,26 @@ window.resumeData = {
     contact: {email: "laurentxxc@gmail.com", phone: "+33 6 61 82 14 75", location: "Achères (Île-de-France), France", map_link: "https://maps.app.goo.gl/hFgziqW14yTdynGs5"},
     social: [{name: "GitHub", logo:"assets/images/github-icon.png", url: "https://github.com/laurentxxc"},{name:"LinkedIn", logo:"assets/images/linkedin-square-icon.png", url:"https://www.linkedin.com/in/lxxc"}],
     qrcode: "assets/images/vcard_lxxc_black.png",
-    projects: [{title:"WebResume",desc:"Web app pour afficher mon CV. L'application a été créée avec les objectifs suivants :\n\
+    projects: [
+      {title:"WebResume",desc:"Web app pour afficher mon CV. L'application a été créée avec les objectifs suivants :\n\
         - Faire un site web statique pouvant être hébergé gratuitement sur GitHub Pages (HTML/JS/CSS).\n\
         - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Générer le code avec l'IA.",
         link:"https://github.com/laurentxxc/webresume.github.io"},
+      
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple jeu de correspondance de tuiles réalisé avec Flutter/Dart.\n\
         J'ai créé cette application pour comprendre l'efficacité de Flutter/Dart dans le développement d'applications multi-plateformes.\n\
-        À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"}]
+        À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"},
+      
+      {title:"MailJobScanner",desc:"Outil Python qui analyse les e-mails d'alertes d'offres d'emploi depuis Apple Mail (AppleScript) ou Gmail (IMAP), extrait les offres avec un LLM local, les compare à mon CV et à mes attentes, et les note en correspondance Faible/Moyenne/Forte.\n\
+        Les résultats sont consultables dans un tableau de bord [Streamlit](https://streamlit.io) et tout s'exécute localement et en toute confidentialité via [Ollama](https://ollama.com) ou [LM Studio](https://lmstudio.ai).",link:"https://github.com/laurentxxc/MailJobScanner", img:"assets/images/dashboard_screenshot_jobList_small.png"},
+      
+      {title:"R4J Tools",desc:"Boîte à outils Python pour exporter, formater et publier des exigences R4J dans plusieurs formats de publication :\n\
+        - Export des exigences d'une base de données JIRA au format YAML.\n\
+        - Réorganisation en un document structuré avec des templates [Jinja](https://jinja.palletsprojects.com).\n\
+        - Rendu du rapport final MS Word via [Pandoc](https://pandoc.org).",link:"https://github.com/laurentxxc/r4jtools", img:"assets/images/r4jtools_workflow.png"},
+      
+      {title:"Triplex (SwiftUI)",desc:"Jeu de puzzle natif pour iOS/iPadOS/macOS écrit en SwiftUI où il faut former des groupes de 3 tuiles partageant tous les critères ou toutes différentes sur les 4 attributs.\n\
+        Créé pour évaluer l'expérience de développement Xcode/SwiftUI ; archivé après avoir été porté en [version multi-plateforme Flutter](https://github.com/laurentxxc/flutter_triplex).",link:"https://github.com/laurentxxc/swiftui_triplex", img:"assets/images/triplex_switfui.png"}]
   }
 };
