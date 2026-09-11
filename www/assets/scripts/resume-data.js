@@ -14,13 +14,21 @@ window.resumeData = {
     },
     about: "Hi👋, my name is **Laurent**.\n\Expert in systems engineering and software architecture with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
     experience: [
-      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - Present", 
+      {company:"Remote", role:"Independent Software Development \& Technology Exploration",dates:"2026 - Today",
+        description: "After 25+ years in embedded software, I am deliberately expanding my technical scope beyond Digital TV, using this transition period to learn modern software technologies and build practical applications, increasingly using AI-assisted development. This includes:\n\
+        - Developing personal software projects using Python, Swift/SwiftUI, web technologies and AI-assisted development workflows.\n\
+        - Exploring modern software technologies through hands-on projects and continuous learning.\n\
+        - Using LLMs as an engineering assistant for software design, implementation, debugging, documentation and technical research.\n\
+        - Designing and implementing applications from initial concept through development, testing and deployment.\n\
+        - Publishing selected projects and experiments on [my GitHub](https://github.com/laurentxxc)."
+      },
+
+      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Distinguished Systems Engineer / Video Product Line Manager", dates: "2024 - 2026", 
         description: "As part of an international team of product line managers, I was focus on the definition of new [set-top boxes (STB)](https://en.wikipedia.org/wiki/Set-top_box) products around [Android TV](https://www.android.com/tv/) platform. In particular, I have:\n\
         - Led definition of Android TV POCs (e.g. Subatomic) thanks to closed relationship with Google regarding new Android feature roadmap.\n\
         - Ensured Google policies (inc. Letter upgrade and Security patch) are properly implemented across deployed products (>12M active units).\n\
         - Maintained Android TV requirements database ([Jira](https://www.atlassian.com/software/jira)) across product lines ([Broadcom](https://www.broadcom.com/), [Amlogic](https://www.amlogic.com/) or [Synaptics](https://www.synaptics.com) CPU based).\n\
         - Coordinated Android TV migration support with commercial and development teams."},
-
 
       {company: "[CommScope](https://www.commscope.com/) / [Arris](https://en.wikipedia.org/wiki/Arris_International)", role: "Distinguished Systems Engineer", dates: "2016 - 2024", 
         description: "As part of an international team of systems engineers, I was responsible of technical specification of various STB products. In particular, I have:\n\
@@ -86,7 +94,15 @@ window.resumeData = {
     about: "Salutations🖖, je me prénomme **Laurent**.\n\Expert en ingénierie des systèmes et architecture logicielle avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
-      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Architecte Produit Android TV", dates: "2024 - Présent", 
+      {company: "Indépendant", role:"Développement Logiciel Indépendant \& Exploration Technologique", date: "2026 –- Présent",
+        description: "Après plus de 25 ans en logiciel embarqué, j'élargis délibérément mon champ technique au-delà de la TV numérique, utilisant cette période de transition pour apprendre les technologies logicielles modernes et concevoir des applications pratiques, en recourant de plus en plus au développement assisté par IA. Cela comprend :\n\
+        - Développement de projets logiciels personnels en Python, Swift/SwiftUI, technologies web et workflows de développement assisté par IA.\n\
+        - Exploration de technologies logicielles modernes à travers des projets pratiques et une formation continue.\n\
+        - Utilisation de LLMs comme assistant d'ingénierie pour la conception, l'implémentation, le débogage, la documentation et la recherche technique.\n\
+        - Conception et implémentation d'applications depuis le concept initial jusqu'au développement, aux tests et au déploiement.\n\
+        - Publication de projets et d'expériences sélectionnés sur [mon GitHub](https://github.com/laurentxxc)."},
+
+      {company: "[Vantiva Technologies](https://www.vantiva.com/)", role: "Architecte Produit Android TV", dates: "2024 - 2026", 
         description: "En tant que membre d'une équipe internationale de Responsables Ligne Produits, j'ai été chargé de la définition de nouveaux produits [boîtiers numériques (STB)](https://en.wikipedia.org/wiki/Set-top_box) autour de la plateforme [Android TV](https://www.android.com/tv/). En particulier, j'ai :\n\
         - Piloté la définition de POCs Android TV (ex. Subatomic) grâce à une collaboration étroite avec [Google](https://www.google.com/) concernant la nouvelle feuille de route des fonctionnalités Android TV.\n\
         - Assuré que les politiques Google (y compris les mises à jour et les correctifs de sécurité) sont correctement implémentées dans les produits déployés (>12M d'unités actives).\n\

@@ -60,10 +60,8 @@ if [ -f "$CHANGELOG" ]; then
   { cat "$TMPCHANGELOG"; echo; cat "$CHANGELOG"; } > "${CHANGELOG}.new"
   mv "${CHANGELOG}.new" "$CHANGELOG"
 else
-  mv "$TMPCHANGELOG" "$CHANGELOG"
+  cp "$TMPCHANGELOG" "$CHANGELOG"
 fi
-
-rm -f "$TMPCHANGELOG" || true
 
 git add "$CHANGELOG"
 git commit -m "docs(changelog): prepare ${VERSION}" || echo "No changelog changes to commit"
@@ -102,9 +100,11 @@ echo "Created archive: $ARCHIVE"
 # attempt to create GitHub release if gh CLI available
 if command -v gh >/dev/null 2>&1; then
   echo "Creating GitHub release via gh CLI"
-  gh release create "$VERSION" "$ARCHIVE" --title "$VERSION" --notes-file "$CHANGELOG" || echo "gh release failed or already exists"
+  gh release create "$VERSION" "$ARCHIVE" --title "$VERSION" --notes-file "$TMPCHANGELOG" || echo "gh release failed or already exists"
 else
   echo "gh CLI not found; skipping GitHub release creation. You can run: gh release create $VERSION $ARCHIVE --title \"$VERSION\" --notes-file $CHANGELOG"
 fi
+
+rm -f "$TMPCHANGELOG" || true
 
 echo "Release ${VERSION} prepared successfully."
