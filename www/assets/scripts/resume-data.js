@@ -14,7 +14,7 @@ window.resumeData = {
     },
     about: "Hi👋, my name is **Laurent**.\n\Expert in systems engineering and software architecture with over 25 years of experience in embedded software for digital television, I have contributed to the development and deployment of numerous TV set-top boxes for major international operators.\nExperienced in requirements analysis, specification, design, and project management, I am passionate about transforming emerging technologies into secure, real-world solutions through creativity, collaboration, and technical excellence.",
     experience: [
-      {company:"Remote", role:"Independent Software Development \& Technology Exploration",dates:"2026 - Today",
+      {company:"", role:"⚙️ Independent Software Development \& Technology Exploration 🧠",dates:"2026 - Today",
         description: "After 25+ years in embedded software, I am deliberately expanding my technical scope beyond Digital TV, using this transition period to learn modern software technologies and build practical applications, increasingly using AI-assisted development. This includes:\n\
         - Developing personal software projects using Python, Swift/SwiftUI, web technologies and AI-assisted development workflows.\n\
         - Exploring modern software technologies through hands-on projects and continuous learning.\n\
@@ -107,7 +107,7 @@ window.resumeData = {
     about: "Salutations🖖, je me prénomme **Laurent**.\n\Expert en ingénierie des systèmes et architecture logicielle avec plus de 25 ans d'expérience dans le logiciel embarqué pour la télévision numérique, j'ai contribué au développement et au déploiement de nombreux boîtiers numériques pour de grands opérateurs internationaux.\n\
     Expérimenté en analyse des besoins, spécification, conception et gestion de projet, je suis passionné par la transformation des technologies émergentes en solutions concrètes et sécurisées grâce à la collaboration, la créativité et l'excellence technique.",
     experience: [
-      {company: "Indépendant", role:"Développement Logiciel Indépendant \& Exploration Technologique", date: "2026 –- Présent",
+      {company: "", role:"⚙️ Développement Logiciel Indépendant \& Exploration Technologique 🧠", date: "2026 –- Présent",
         description: "Après plus de 25 ans en logiciel embarqué, j'élargis délibérément mon champ technique au-delà de la TV numérique, utilisant cette période de transition pour apprendre les technologies logicielles modernes et concevoir des applications pratiques, en recourant de plus en plus au développement assisté par IA. Cela comprend :\n\
         - Développement de projets logiciels personnels en Python, Swift/SwiftUI, technologies web et workflows de développement assisté par IA.\n\
         - Exploration de technologies logicielles modernes à travers des projets pratiques et une formation continue.\n\
