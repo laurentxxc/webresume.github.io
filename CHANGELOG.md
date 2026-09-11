@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.4.0 - 2026-09-11
+
+- Resume updates (#8) (021e896)
+- resume data updated (french version) (6eba91f)
+- Merge pull request #7 from laurentxxc/vercel/vercel-web-analytics-to-projec-8e8pup (f55514d)
+- Add Vercel Web Analytics to project (fea9218)
+
+# Changelog
+
 ## v1.3.0 - 2026-01-16
 
 - Merge pull request #6 from laurentxxc/feature/new-project (f1dab91)
