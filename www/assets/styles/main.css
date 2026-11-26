@@ -47,8 +47,61 @@ p{margin:0.5rem 0}
   .about-photo{width:100%;max-width:200px}
 }
 
-.job,.project-card{margin-bottom:1rem;padding:0.75rem;border-left:3px solid var(--accent);padding-left:1rem;background:rgba(0,0,0,0.01);border-radius:4px;transition:var(--transition)}
-.job h3,.project-card h4{margin-top:0;margin-bottom:0.25rem}
+.job, .project-card {
+  margin-bottom:1rem;
+  padding:0.75rem;
+  border-left:3px solid var(--accent);
+  padding-left:1rem;
+  background:rgba(0,0,0,0.01);
+  border-radius:4px;
+  transition:var(--transition)
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-card h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.project-image-container {
+  display: flex;
+  align-items: center; /* Centers both vertically and horizontally */
+}
+
+.project-image {
+  max-width: 94px; /* Match the height of the image container */
+}
+
+.project-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-description p {
+  margin: 0 0 10px 0;
+  overflow-wrap: break-word;
+}
+
+.project-description a {
+  text-decoration: none;
+}
+
+.project-description a:hover {
+  text-decoration: underline;
+}
+
+.job h3{margin-top:0;margin-bottom:0.25rem}
 
 .skill-chip{display:inline-block;padding:0.35rem 0.75rem;margin:0.25rem;border-radius:999px;background:var(--border);color:var(--text);font-size:0.9rem;transition:var(--transition);border:1px solid var(--accent)}
 
@@ -57,7 +110,6 @@ p{margin:0.5rem 0}
 .skill-items{display:flex;flex-wrap:wrap;gap:0.25rem}
 
 .profile-photo{width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid var(--accent)}
-.project-image{width:96px;height:96px;object-fit:contain;padding:5px;float:left;margin-right:0.75rem}
 
 .about-wrapper{display:flex;gap:1.5rem;align-items:flex-start}
 .about-photo{flex-shrink:0;width:25%;max-width:150px;}

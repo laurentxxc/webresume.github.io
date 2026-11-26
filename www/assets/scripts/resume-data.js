@@ -77,7 +77,11 @@ window.resumeData = {
         - Keep it simple and use static web pages in order to have it hosted freely on GitHub Pages.\n\
         - Use/evaluate [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Generate code with AI.",link:"https://github.com/laurentxxc/webresume.github.io"},
-      
+
+      {title:"Chronofane", desc:"Chronofane is an interactive genealogy tool that visualizes ancestors on a time-based fan chart.\n\
+        Built with [D3.js](https://d3js.org) and SVG, it places people according to their birth and death years, helping users see how family members’ lives overlap across generations.\n\
+        It supports GEDCOM import, pdf export. Available with French and English languages.", link:"https://chronofane.vercel.app", img:"assets/images/chronofane.jpeg"},
+
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple tile matching game made with Flutter/Dart.\n\
         I have made this app to understand how efficient Flutter/Dart is for developing multi-platform applications.\n\
         Originally, I did the same game using SwiftUI and Xcode (very nice stuff) but I wanted to have similar development experience with a bit more a flexibility for deploying my application in a multi OS environment.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"},
@@ -170,7 +174,12 @@ window.resumeData = {
         - Utiliser et évaluer [spec-kit](https://github.com/github/spec-kit) (Spec Driven Development).\n\
         - Générer le code avec l'IA.",
         link:"https://github.com/laurentxxc/webresume.github.io"},
-      
+
+      {title:"Chronofane", desc:"Outil interactif de généalogie qui visualise les ancêtres sur un éventail chronologique.\n\
+        Construit avec [D3.js](https://d3js.org) et SVG, il place les personnes selon leurs années de naissance et de décès, aidant les utilisateurs à voir comment les vies des membres de la famille se chevauchent à travers les générations.\n\
+        Prend en charge l'import GEDCOM et l'export du graphique en PDF.\n\
+        Disponible en français et en anglais.", link:"https://chronofane.vercel.app", img:"assets/images/chronofane.jpeg"},
+
       {title:"Triplex ♥︎ ⚑ ♛", desc:"Simple jeu de correspondance de tuiles réalisé avec Flutter/Dart.\n\
         J'ai créé cette application pour comprendre l'efficacité de Flutter/Dart dans le développement d'applications multi-plateformes.\n\
         À l'origine, j'avais fait le même jeu en utilisant SwiftUI et Xcode (très sympa) mais je voulais avoir une expérience de développement similaire avec un peu plus de flexibilité pour déployer mon application dans un environnement multi-OS.", link:"https://triplex-web.vercel.app", img:"assets/images/triplex_tiny.gif"},
