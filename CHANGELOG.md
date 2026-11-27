@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.5.0 - 2026-11-27
+
+- Few updates: - Adding chronofane project in resume data - layout and CSS update for project-content (a6188bc)
+
+# Changelog
+
 ## v1.4.0 - 2026-09-11
 
 - Resume updates (#8) (021e896)
